@@ -31,6 +31,29 @@ public class EcoSystem extends Organization{
         networkList.add(network);
         return network;
     }
+    
+    public void removeNetwork(Network network) {
+        networkList.remove(network);
+    }
+    
+    public boolean isDuplicateNetwork(String name) {
+     for(Network n:networkList){
+            if(n.equals(name)){
+                return true;
+            }
+        }    
+    return false;
+    }
+    
+     public void updateNetwork(Network network,String name){
+        for(Network n:networkList){
+            if(n.equals(network)){
+                n.setName(name);
+            }
+        }
+    }
+
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<Role>();
