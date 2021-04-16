@@ -10,17 +10,17 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.MedicineProviderWorkArea.MedicineProviderAdminPanle;
+import ui.NGOAdminWorkArea.NGOAdminPanel;
 
 /**
  *
  * @author maneesh
  */
-public class PharamcyAdminRole extends Role {
+public class HomelessProviderAdmin extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-       return new MedicineProviderAdminPanle(); //To change body of generated methods, choose Tools | Templates.
+        return new NGOAdminPanel(); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

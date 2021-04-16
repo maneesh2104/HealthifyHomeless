@@ -10,17 +10,18 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.MedicineProviderWorkArea.MedicineProviderAdminPanle;
+import ui.HospitalWorkArea.HospitalAdminJPanel;
 
 /**
  *
  * @author maneesh
  */
-public class PharamcyAdminRole extends Role {
+public class HospitalAdminRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-       return new MedicineProviderAdminPanle(); //To change body of generated methods, choose Tools | Templates.
+        return new HospitalAdminJPanel();
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

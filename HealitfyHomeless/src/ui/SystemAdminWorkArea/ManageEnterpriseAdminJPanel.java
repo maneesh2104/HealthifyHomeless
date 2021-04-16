@@ -9,9 +9,14 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Role.AdminRole;
+import Business.Role.HomelessProviderAdmin;
+import Business.Role.HospitalAdminRole;
+import Business.Role.NgoAdminRole;
+import Business.Role.PharamcyAdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -247,11 +252,33 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String username = usernameJTextField.getText();
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String name = nameJTextField.getText();
+        if(username.isEmpty() || password.isEmpty() || name.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please enter all fields", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else{
+            Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
         
-        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
-        
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
-        populateTable();
+            if (system.checkIfUserIsUnique(username)) {
+                UserAccount account;
+                if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Hospital) {
+                    account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole());
+                } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.HomelessDataProviders) {
+                    account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HomelessProviderAdmin());
+                }
+                else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.MedicineProviders) {
+                    account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new PharamcyAdminRole());
+                }
+                
+                
+                
+                usernameJTextField.setText("");
+                passwordJPasswordField.setText("");
+                nameJTextField.setText("");
+                JOptionPane.showMessageDialog(null, "Account created sucessfully");
+                populateTable();
+            }else {
+                JOptionPane.showMessageDialog(null, "Please enter unique username", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+        }
         
     }//GEN-LAST:event_submitJButtonActionPerformed
 
