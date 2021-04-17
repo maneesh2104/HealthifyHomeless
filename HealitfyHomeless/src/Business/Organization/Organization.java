@@ -22,14 +22,26 @@ public abstract class Organization {
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
     private static int counter=0;
+    String address= "";
     
     public enum Type{
-        Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization");
+        Admin("Admin Organization"),
+        Doctor("Doctor Organization"), 
+        NGO("NGO"),
+        HealthCamp("Health Camp"),
+        Shelter("Over night shelter"),
+        Lab("Lab Organization");
+        
         private String value;
         private Type(String value) {
             this.value = value;
         }
         public String getValue() {
+            return value;
+        }
+        
+        @Override
+        public String toString(){
             return value;
         }
     }
@@ -48,6 +60,15 @@ public abstract class Organization {
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
 
     public int getOrganizationID() {
         return organizationID;
