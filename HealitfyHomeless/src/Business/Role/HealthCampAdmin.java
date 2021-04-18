@@ -10,17 +10,16 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.NGOAdminWorkArea.NGOAdminPanel;
 
 /**
  *
  * @author maneesh
  */
-public class HomelessProviderAdmin extends Role {
+public class HealthCampAdmin extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new NGOAdminPanel(userProcessContainer, business, enterprise); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

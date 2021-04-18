@@ -5,8 +5,7 @@
  */
 package ui.NGOAdminWorkArea;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import ui.SystemAdminWorkArea.ManageNetworkJPanel;
@@ -15,18 +14,16 @@ import ui.SystemAdminWorkArea.ManageNetworkJPanel;
  *
  * @author maneesh
  */
-public class NGOAdminPanel extends javax.swing.JPanel {
+public class NgoLoginPage extends javax.swing.JPanel {
 
     /**
-     * Creates new form NGOAdminPanel
+     * Creates new form NgoLoginPage
      */
-    JPanel userProcessContainer;
-    EcoSystem ecosystem;
-    Enterprise enterprise;
-    public NGOAdminPanel(JPanel userProcessContainer,EcoSystem ecosystem, Enterprise enterprise) {
-        this.userProcessContainer=userProcessContainer;
-        this.ecosystem=ecosystem;
-        this.enterprise = enterprise;
+    JPanel container;
+    Organization org;
+    public NgoLoginPage(JPanel container, Organization org) {
+        this.container = container;
+        this.org = org;
         initComponents();
     }
 
@@ -40,14 +37,14 @@ public class NGOAdminPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnAddOrganization = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
-        jLabel1.setText("Homeless Data Providing Area");
+        jLabel1.setText("NGO Logged in");
 
-        btnAddOrganization.setText("Add Organization");
-        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Manage Patients");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddOrganizationActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -56,36 +53,38 @@ public class NGOAdminPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(107, 107, 107)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btnAddOrganization)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                        .addGap(133, 133, 133)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jButton1)))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(62, 62, 62)
-                .addComponent(btnAddOrganization)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(jButton1)
+                .addContainerGap(239, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        AddOrganizationJpanel addOrganization=new AddOrganizationJpanel(userProcessContainer, ecosystem, enterprise);
-        userProcessContainer.add("addOrganization",addOrganization);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnAddOrganizationActionPerformed
+        ManagePatientsJPanel manageNetworkJPanel=new ManagePatientsJPanel(org, container);
+        container.add("manageNetworkJPanel",manageNetworkJPanel);
+        CardLayout layout=(CardLayout)container.getLayout();
+        layout.next(container);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddOrganization;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

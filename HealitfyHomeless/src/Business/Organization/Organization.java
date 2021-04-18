@@ -4,6 +4,7 @@
  */
 package Business.Organization;
 
+import Buisness.Patient.PatientDirectory;
 import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
@@ -20,16 +21,29 @@ public abstract class Organization {
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
+    private PatientDirectory patientDirectory;
     private int organizationID;
     private static int counter=0;
+    String address= "";
     
     public enum Type{
-        Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization");
+        Admin("Admin Organization"),
+        Doctor("Doctor Organization"), 
+        NGO("NGO"),
+        HealthCamp("Health Camp"),
+        Shelter("Over night shelter"),
+        Lab("Lab Organization");
+        
         private String value;
         private Type(String value) {
             this.value = value;
         }
         public String getValue() {
+            return value;
+        }
+        
+        @Override
+        public String toString(){
             return value;
         }
     }
@@ -39,6 +53,7 @@ public abstract class Organization {
         workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
+        patientDirectory = new PatientDirectory();
         organizationID = counter;
         ++counter;
     }
@@ -48,6 +63,24 @@ public abstract class Organization {
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
+
+    public PatientDirectory getPatientDirectory() {
+        return patientDirectory;
+    }
+
+    public void setPatientDirectory(PatientDirectory patientDirectory) {
+        this.patientDirectory = patientDirectory;
+    }
+    
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
 
     public int getOrganizationID() {
         return organizationID;
