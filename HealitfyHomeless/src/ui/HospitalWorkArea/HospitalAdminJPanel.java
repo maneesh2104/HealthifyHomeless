@@ -28,65 +28,61 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        adddoctor = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        assigntodoctor = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
         jLabel1.setText("Welcome Hospital Admin ");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 11, -1, 33));
 
-        jButton1.setText("Assign to Doctor");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        adddoctor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        adddoctor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adddoctorMouseClicked(evt);
             }
         });
 
-        jButton2.setText("Add Doctor");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        jLabel2.setText("ADD DOCTOR");
+        adddoctor.add(jLabel2);
+
+        add(adddoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 180, 240));
+
+        assigntodoctor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        assigntodoctor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                assigntodoctorMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
-                .addContainerGap(133, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(137, Short.MAX_VALUE))
-        );
+        jLabel3.setText("ASSIGN TO DOCTOR");
+        assigntodoctor.add(jLabel3);
+
+        add(assigntodoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 180, 240));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/hospitalimage.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 710));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assigntodoctorMouseClicked
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_assigntodoctorMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void adddoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adddoctorMouseClicked
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_adddoctorMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel adddoctor;
+    private javax.swing.JPanel assigntodoctor;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
