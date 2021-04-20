@@ -52,6 +52,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,7 +81,12 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 120, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 120, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/DoctorRole/hospitalimage.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setPreferredSize(new java.awt.Dimension(768, 768));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 710));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -122,6 +128,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;
     private javax.swing.JLabel valueLabel;
