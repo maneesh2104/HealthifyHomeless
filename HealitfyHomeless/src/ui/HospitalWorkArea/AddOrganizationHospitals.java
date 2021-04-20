@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.NGOAdminWorkArea;
+package ui.HospitalWorkArea;
 
+import ui.NGOAdminWorkArea.*;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
@@ -12,6 +13,8 @@ import Business.Network.Network;
 import Business.Organization.NgoOrganization;
 import Business.Organization.Organization;
 import Business.Role.HealthCampAdmin;
+import Business.Role.HospitalAdminRole;
+import Business.Role.LabAdminRole;
 import Business.Role.NgoAdminRole;
 import Business.Role.OverNightShelterAdmin;
 import Business.Role.Role;
@@ -23,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author maneesh
  */
-public class AddOrganizationJpanel extends javax.swing.JPanel {
+public class AddOrganizationHospitals extends javax.swing.JPanel {
 
     /**
      * Creates new form AddOrganizationJpanel
@@ -33,7 +36,7 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     Network network;
     Enterprise enterprise;
     Organization org;
-    public AddOrganizationJpanel(JPanel userProcessContainer,EcoSystem ecosystem, Enterprise enterprise) {
+    public AddOrganizationHospitals(JPanel userProcessContainer,EcoSystem ecosystem, Enterprise enterprise) {
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
         this.enterprise = enterprise;
@@ -238,16 +241,13 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
              if(!userName.isEmpty() && !password.isEmpty()){
                      if(ecosystem.checkIfUserIsUnique(userName)){
                             Role role = null;
-                            if(type.equals(Organization.Type.HealthCamp)){
-                                role = new HealthCampAdmin();
+                            if(type.equals(Organization.Type.Hospital)){
+                                role = new HospitalAdminRole();
                             }
-                            else if(type.equals(Organization.Type.Shelter)){
-                                role = new OverNightShelterAdmin();
+                            else if(type.equals(Organization.Type.Lab)){
+                                role = new LabAdminRole();
                             }
-                            else if(type.equals(Organization.Type.NGO)){
-                                role = new NgoAdminRole();
-                            }
-                            org.getUserAccountDirectory().createUserAccount(userName, password, null, new NgoAdminRole());    
+                            org.getUserAccountDirectory().createUserAccount(userName, password, null, role);    
                             JOptionPane.showMessageDialog(null, "User account Created!"); 
                             txtName.setText("");
                             txtPassword.setText("");
@@ -288,10 +288,8 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void fillComboBox() {
-        typeCombo.addItem(Organization.Type.NGO);
-        typeCombo.addItem(Organization.Type.HealthCamp);
-        typeCombo.addItem(Organization.Type.Shelter);
-        
+        typeCombo.addItem(Organization.Type.Hospital);
+        typeCombo.addItem(Organization.Type.Lab);        
     }
 
     private void populateTable() {

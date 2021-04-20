@@ -10,6 +10,7 @@ import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
+import Buisness.Hospitals.DoctorDirectoy;
 
 /**
  *
@@ -22,6 +23,7 @@ public abstract class Organization {
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private PatientDirectory patientDirectory;
+    private DoctorDirectoy doctorDirectory;
     private int organizationID;
     private static int counter=0;
     String address= "";
@@ -32,6 +34,7 @@ public abstract class Organization {
         NGO("NGO"),
         HealthCamp("Health Camp"),
         Shelter("Over night shelter"),
+        Hospital("Hospital"),
         Lab("Lab Organization");
         
         private String value;
@@ -54,6 +57,7 @@ public abstract class Organization {
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
         patientDirectory = new PatientDirectory();
+        doctorDirectory = new DoctorDirectoy();
         organizationID = counter;
         ++counter;
     }
@@ -64,6 +68,18 @@ public abstract class Organization {
         return userAccountDirectory;
     }
 
+    public DoctorDirectoy getDoctorDirectory() {
+        if (doctorDirectory == null){
+            doctorDirectory = new DoctorDirectoy();
+        }
+        return doctorDirectory;
+    }
+
+    public void setDoctorDirectory(DoctorDirectoy doctorDirectory) {
+        this.doctorDirectory = doctorDirectory;
+    }
+
+    
     public PatientDirectory getPatientDirectory() {
         return patientDirectory;
     }

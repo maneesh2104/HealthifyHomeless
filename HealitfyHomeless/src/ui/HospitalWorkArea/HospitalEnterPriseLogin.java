@@ -11,23 +11,23 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import ui.NGOAdminWorkArea.AddOrganizationJpanel;
 
 /**
  *
  * @author maneesh
  */
-public class HospitalAdminJPanel extends javax.swing.JPanel {
+public class HospitalEnterPriseLogin extends javax.swing.JPanel {
 
     /**
-     * Creates new form HospitalAdminJPanel
+     * Creates new form HospitalEnterPriseLogin
      */
     JPanel userProcessContainer;
     UserAccount account;
     Organization organization;
     Enterprise enterprise;
     EcoSystem business;
-    
-    public HospitalAdminJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    public HospitalEnterPriseLogin(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -35,6 +35,7 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.business = business;
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,21 +48,13 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
-        jLabel1.setText("Welcome Hospital Admin ");
+        jLabel1.setText("Welcome Hosptal Enterprise Admin");
 
-        jButton1.setText("Assign to Doctor");
+        jButton1.setText("Manage Organizations");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Add Doctor");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -70,44 +63,38 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
-                .addContainerGap(133, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27)
                 .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        AddDoctorPanel addDoctor = new AddDoctorPanel(userProcessContainer,organization);
-        userProcessContainer.add("addOrganization",addDoctor);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);    
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        AddOrganizationHospitals addOrganization;
+        addOrganization = new AddOrganizationHospitals(userProcessContainer, business, enterprise);
+        userProcessContainer.add("addOrganization",addOrganization);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

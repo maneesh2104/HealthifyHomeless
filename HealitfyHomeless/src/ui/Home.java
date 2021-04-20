@@ -62,8 +62,6 @@ public class Home extends javax.swing.JFrame {
         btn_exit = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        button1 = new java.awt.Button();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -212,20 +210,6 @@ public class Home extends javax.swing.JFrame {
         jLabel12.setText("Amos");
         jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 30));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 52)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("04");
-
-        button1.setBackground(new java.awt.Color(71, 120, 197));
-        button1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setLabel("Book");
-        button1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
-            }
-        });
-
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("2021");
@@ -289,15 +273,6 @@ public class Home extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel6))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(79, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -318,11 +293,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
-                .addGap(48, 48, 48)
-                .addComponent(jLabel6)
-                .addGap(25, 25, 25)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 300, 720));
@@ -363,13 +334,6 @@ public class Home extends javax.swing.JFrame {
         
         System.exit(0);
     }//GEN-LAST:event_btn_exitMousePressed
-
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        // TODO add your handling code here:
-         CardLayout layout=(CardLayout)jPanel6.getLayout();
-            jPanel6.add("workArea", new HospitalAdminJPanel());
-            layout.next(jPanel6);
-    }//GEN-LAST:event_button1ActionPerformed
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
         // Get user name
@@ -506,7 +470,6 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_1;
     private javax.swing.JLabel btn_exit;
-    private java.awt.Button button1;
     private javax.swing.JPanel ind_1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -514,7 +477,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

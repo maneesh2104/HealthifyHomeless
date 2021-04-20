@@ -7,6 +7,7 @@ package ui.DoctorRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -21,13 +22,13 @@ import javax.swing.table.DefaultTableModel;
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private DoctorOrganization organization;
+    private Organization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DoctorOrganization organization, Enterprise enterprise) {
+    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
@@ -49,7 +50,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             row[2] = request.getStatus();
             String result = ((LabTestWorkRequest) request).getTestResult();
             row[3] = result == null ? "Waiting" : result;
-            
             model.addRow(row);
         }
     }
