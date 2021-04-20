@@ -186,12 +186,13 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
 
     private void fillComboBox() {
         ArrayList<Enterprise> enterpriseList = network.getEnterpriseDirectory().getEnterpriseList();
-        
+        jComboBox1.removeAllItems();
         for(Enterprise ent:enterpriseList){
-//            if(ent.getEnterpriseType().equals(Enterprise.Type){
-//                
-//            }
-            jComboBox1.addItem(ent);
+            System.out.println(ent.getEnterpriseType());
+            System.out.println(Enterprise.EnterpriseType.Hospital);
+            if(ent.getEnterpriseType() == Enterprise.EnterpriseType.Hospital){
+                            jComboBox1.addItem(ent);
+            }
         }
         ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
         for(Organization org: orgList){
