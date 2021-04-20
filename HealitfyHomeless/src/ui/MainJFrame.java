@@ -190,7 +190,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         else{
             CardLayout layout=(CardLayout)container.getLayout();
-            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system, null));
             layout.next(container);
         }
 

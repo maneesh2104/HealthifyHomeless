@@ -347,6 +347,7 @@ public class Home extends javax.swing.JFrame {
 
         Enterprise inEnterprise=null;
         Organization inOrganization=null;
+        Network inNetwork=null;
 
         if(userAccount==null){
             //Step 2: Go inside each network and check each enterprise
@@ -361,6 +362,7 @@ public class Home extends javax.swing.JFrame {
                             if(userAccount!=null){
                                 inEnterprise=enterprise;
                                 inOrganization=organization;
+                                inNetwork = network;
                                 break;
                             }
                         }
@@ -386,7 +388,7 @@ public class Home extends javax.swing.JFrame {
         }
         else{
             CardLayout layout=(CardLayout)jPanel6.getLayout();
-            jPanel6.add("workArea",userAccount.getRole().createWorkArea(jPanel6, userAccount, inOrganization, inEnterprise, system));
+            jPanel6.add("workArea",userAccount.getRole().createWorkArea(jPanel6, userAccount, inOrganization, inEnterprise, system, inNetwork));
             layout.next(jPanel6);
         }
 

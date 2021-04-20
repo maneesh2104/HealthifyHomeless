@@ -28,6 +28,7 @@ public class AddDoctorPanel extends javax.swing.JPanel {
     JPanel container;
     public AddDoctorPanel(JPanel container, Organization org) {
         this.org = org;
+        this.container = container;
         initComponents();
         populatTable();
     }
@@ -184,6 +185,7 @@ public class AddDoctorPanel extends javax.swing.JPanel {
                 row[0] = doc.getName();
                 row[1] = doc.getSpecality();
                 row[2] = doc.getUsername();
+                row[3] = doc.getDepartment();
                 model.addRow(row);
         }
             
