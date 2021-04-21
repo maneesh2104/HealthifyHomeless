@@ -38,7 +38,7 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Hospital.getValue())){
-            organization = new HospitalOrganization(address);
+            organization = new HospitalOrganization(name,address);
             organizationList.add(organization);
         }
         

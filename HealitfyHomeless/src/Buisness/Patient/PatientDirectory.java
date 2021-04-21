@@ -30,6 +30,10 @@ public class PatientDirectory {
         this.patientList = patientList;
     }
     
+    public void addPatient(Patinet p){
+        patientList.add(p);
+    }
+    
     public Patinet createPatient(String name, int age, int weight, int height, String bloodGroup, String Symtoms, String disease){
         Patinet newPatient = new Patinet();
         newPatient.setAge(age);

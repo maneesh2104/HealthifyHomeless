@@ -9,9 +9,11 @@ import Buisness.Patient.PatientDirectory;
 import Buisness.Patient.Patinet;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.HospitalOrganization;
 import Business.Organization.Organization;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -33,8 +35,9 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         this.org = org;
         this.enterprise = enterprise;
         this.network = network;
-        
+        this.container = container;
         populateTable();
+        populateTable1();
         fillComboBox();
     }
     
@@ -56,6 +59,9 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Assign to hospital ");
@@ -91,18 +97,29 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
             }
         });
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Age", "Symptoms", "Disease", "Hospital"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jLabel3.setText("Assigned Patients");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(120, 120, 120))
             .addGroup(layout.createSequentialGroup()
@@ -117,6 +134,17 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
                         .addGap(132, 132, 132)
                         .addComponent(jButton1)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +161,11 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -146,6 +178,20 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+                Organization orga = (Organization) jComboBox1.getSelectedItem();
+                Patinet p = (Patinet)jTable1.getValueAt(selectedRow, 0);
+                p.isHosAssigned = true;
+                p.hospitalAssigned = orga;
+                orga.getPatientDirectory().addPatient(p); 
+                populateTable1();
+        }
+        //jTable1.getSele
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -155,8 +201,11 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
@@ -170,14 +219,42 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         
         for (Patinet patient : pd.getPatientList()){
         {
-//             if(organization instanceof NgoOrganization){
+            if(patient.isHosAssigned == false){
                 Object[] row = new Object[4];
-                row[0] = patient.getFullname();
+                row[0] = patient;
                 row[1] = patient.getAge();
                 row[2] = patient.getSymptoms();
                 row[3] = patient.getDisease();
                 model.addRow(row);
-//             }
+            }
+
+        }
+            
+        }
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+     private void populateTable1() {
+        PatientDirectory pd = org.getPatientDirectory();
+        pd.getPatientList();
+        
+        jTable2.getTableHeader().setDefaultRenderer(new TableColors());
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        
+        model.setRowCount(0);
+        
+        for (Patinet patient : pd.getPatientList()){
+        {
+            if(patient.isHosAssigned == true){
+                Object[] row = new Object[5];
+                row[0] = patient;
+                row[1] = patient.getAge();
+                row[2] = patient.getSymptoms();
+                row[3] = patient.getDisease();
+                row[4] = patient.hospitalAssigned;
+                model.addRow(row);
+            }
+
         }
             
         }
@@ -188,11 +265,18 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         ArrayList<Enterprise> enterpriseList = network.getEnterpriseDirectory().getEnterpriseList();
         jComboBox1.removeAllItems();
         for(Enterprise ent:enterpriseList){
+            if(ent.getEnterpriseType() == Enterprise.EnterpriseType.Hospital){
+                
+                for(Organization org: ent.getOrganizationDirectory().getOrganizationList()){
+                    if(org instanceof HospitalOrganization){
+                        jComboBox1.addItem(org);
+                    }
+                }
+            }
+            
             System.out.println(ent.getEnterpriseType());
             System.out.println(Enterprise.EnterpriseType.Hospital);
-            if(ent.getEnterpriseType() == Enterprise.EnterpriseType.Hospital){
-                            jComboBox1.addItem(ent);
-            }
+
         }
         ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
         for(Organization org: orgList){
