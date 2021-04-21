@@ -5,6 +5,7 @@
  */
 package Buisness.Patient;
 
+import Buisness.Hospitals.Doctors;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 
@@ -31,6 +32,8 @@ public class Patinet {
     private String priority;
     public boolean isHosAssigned = false;
     public Organization hospitalAssigned;
+    public Doctors docAssigned;
+    public boolean doctorAssigned = false;
     
     public String getFullname() {
         return fullname;

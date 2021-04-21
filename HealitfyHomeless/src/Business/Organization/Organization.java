@@ -23,6 +23,7 @@ public abstract class Organization {
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private PatientDirectory patientDirectory;
+    private PatientDirectory assignedPatientDirectort;
     private DoctorDirectoy doctorDirectory;
     private int organizationID;
     private static int counter=0;
@@ -58,6 +59,7 @@ public abstract class Organization {
         userAccountDirectory = new UserAccountDirectory();
         patientDirectory = new PatientDirectory();
         doctorDirectory = new DoctorDirectoy();
+        assignedPatientDirectort = new PatientDirectory();
         organizationID = counter;
         ++counter;
     }
@@ -74,6 +76,19 @@ public abstract class Organization {
         }
         return doctorDirectory;
     }
+
+    public PatientDirectory getAssignedPatientDirectort() {
+        if(assignedPatientDirectort == null){
+            assignedPatientDirectort = new PatientDirectory();
+        }
+        return assignedPatientDirectort;
+    }
+
+    public void setAssignedPatientDirectort(PatientDirectory assignedPatientDirectort) {
+        this.assignedPatientDirectort = assignedPatientDirectort;
+    }
+    
+    
 
     public void setDoctorDirectory(DoctorDirectoy doctorDirectory) {
         this.doctorDirectory = doctorDirectory;

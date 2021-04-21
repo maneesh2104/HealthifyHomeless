@@ -5,6 +5,9 @@
  */
 package Buisness.Hospitals;
 
+import Buisness.Patient.Patinet;
+import java.util.ArrayList;
+
 /**
  *
  * @author maneesh
@@ -16,6 +19,11 @@ public class Doctors {
     private String specality;
     String username;
     String password;
+    ArrayList<Patinet> patientList;
+    
+    public Doctors(){
+        patientList = new ArrayList<>();
+    }
 
     public String getUsername() {
         return username;
@@ -65,6 +73,12 @@ public class Doctors {
     public void setSpecality(String specality) {
         this.specality = specality;
     }
+    
+    @Override
+    public String toString(){
+        return name;
+    }
+   
     
     
 }

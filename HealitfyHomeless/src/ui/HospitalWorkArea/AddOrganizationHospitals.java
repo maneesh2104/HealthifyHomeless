@@ -172,7 +172,7 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(217, 217, 217)
                         .addComponent(jButton1)))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
