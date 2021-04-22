@@ -159,6 +159,7 @@ public class AssignDoctorPanel extends javax.swing.JPanel {
                 Patinet p = (Patinet)jTable1.getValueAt(selectedRow, 0);
                 p.doctorAssigned = true;
                 p.docAssigned = doc;
+                populateTable();
                 //org.getAssignedPatientDirectort().addPatient(p); 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -186,14 +187,14 @@ public class AssignDoctorPanel extends javax.swing.JPanel {
         
         for (Patinet patient : pd.getPatientList()){
         {
-//             if(organization instanceof NgoOrganization){
+            if(patient.doctorAssigned == false){
                 Object[] row = new Object[4];
                 row[0] = patient;
                 row[1] = patient.getAge();
                 row[2] = patient.getSymptoms();
                 row[3] = patient.getDisease();
                 model.addRow(row);
-//             }
+            }
         }
             
         }

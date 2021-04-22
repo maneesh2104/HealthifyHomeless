@@ -171,7 +171,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
-        jPanel2.add(managenetwork1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 510, 180, 180));
+        jPanel2.add(managenetwork1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 180, 180));
 
         manageenterprise1.setBackground(new java.awt.Color(204, 204, 204));
         manageenterprise1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -185,7 +185,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setText("MANAGE ENTERPRISE");
         manageenterprise1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
-        jPanel2.add(manageenterprise1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 200, 180));
+        jPanel2.add(manageenterprise1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 200, 180));
 
         manageenterpriseadmin1.setBackground(new java.awt.Color(255, 255, 255));
         manageenterpriseadmin1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -198,9 +198,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/MANAGEENTERPRISE ADMIN.JPG"))); // NOI18N
         jLabel9.setText("jLabel9");
-        manageenterpriseadmin1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 140, 170));
+        manageenterpriseadmin1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 140, 170));
 
-        jPanel2.add(manageenterpriseadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 200, 170));
+        jPanel2.add(manageenterpriseadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 200, 170));
 
         jLabel1.setText("Selected Node:");
 
@@ -212,7 +212,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(lblSelectedNode, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -230,7 +230,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 290, 40));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 720));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 760, 720));
 
         jSplitPane.setRightComponent(jPanel2);
 
