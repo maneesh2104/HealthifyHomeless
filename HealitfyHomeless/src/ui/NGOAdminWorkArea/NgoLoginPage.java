@@ -76,7 +76,7 @@ public class NgoLoginPage extends javax.swing.JPanel {
             .addGroup(managepatientsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         add(managepatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 220, 240));

@@ -4,6 +4,9 @@
  */
 package ui.DoctorRole;
 
+import Buisness.Hospitals.Doctors;
+import Buisness.Patient.PatientDirectory;
+import Buisness.Patient.Patinet;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
@@ -12,8 +15,12 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import ui.HospitalWorkArea.ProcessPatientJFrame;
+import ui.NGOAdminWorkArea.AddpatinetJFrame;
+import ui.NGOAdminWorkArea.TableColors;
 
 /**
  *
@@ -30,6 +37,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
      */
     public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.setSize(1920, 1080);
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
@@ -37,20 +45,35 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         valueLabel.setText(enterprise.getName());
         populateRequestTable();
+        
     }
     
     public void populateRequestTable(){
+        PatientDirectory pd = organization.getPatientDirectory();
+        pd.getPatientList();
+        
+        workRequestJTable.getTableHeader().setDefaultRenderer(new TableColors());
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[4];
-            row[0] = request.getMessage();
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = result == null ? "Waiting" : result;
-            model.addRow(row);
+        
+        for (Patinet patient : pd.getPatientList()){
+        {
+            if(patient.docAssigned != null){
+             if(patient.docAssigned.getUsername().equalsIgnoreCase(userAccount.getUsername())){
+                Object[] row = new Object[6];
+                row[0] = patient;
+                row[1] = patient.getAge();
+                row[3] = patient.getSymptoms();
+                row[2] = patient.getDisease();
+                row[4] = patient.getBloodgrp();
+                row[5] = patient.docComments;
+                model.addRow(row);
+            }
+          }
+           
+        }
+            
         }
     }
 
@@ -71,25 +94,26 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Receiver", "Status", "Result"
+                "Name", "Age", "Dissease", "Symptoms", "Blood group", "Doc comments"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -106,17 +130,18 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(1).setResizable(false);
             workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
             workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 76, 346, 97));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 76, 570, 97));
 
-        requestTestJButton.setText("Request Test");
+        requestTestJButton.setText("Process Patient");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 218, -1, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 160, -1));
 
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +152,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 35, -1, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 127, 30));
+        enterpriseLabel.setText("Doctor");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 127, 30));
 
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 32, 158, 26));
@@ -137,13 +162,23 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(768, 768));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 700));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-        
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
-        layout.next(userProcessContainer);
+        int selectedRow = workRequestJTable.getSelectedRow();
+
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            Patinet p = (Patinet)workRequestJTable.getValueAt(selectedRow, 0);
+            ProcessPatientJFrame addForm = new ProcessPatientJFrame(p);
+            addForm.setLocationRelativeTo(null);
+            addForm.setVisible(true);
+            populateRequestTable();
+        }
+
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
@@ -155,6 +190,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshTestJButton;

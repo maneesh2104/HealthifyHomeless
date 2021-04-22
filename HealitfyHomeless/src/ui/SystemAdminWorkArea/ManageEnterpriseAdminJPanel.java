@@ -186,8 +186,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         if (network != null){
             populateEnterpriseComboBox(network);
         }
-        
-        
     }//GEN-LAST:event_networkJComboBoxActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
@@ -212,9 +210,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.MedicineProviders) {
                     account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new PharamcyAdminRole());
                 }
-                
-                
-                
+
                 usernameJTextField.setText("");
                 passwordJPasswordField.setText("");
                 nameJTextField.setText("");

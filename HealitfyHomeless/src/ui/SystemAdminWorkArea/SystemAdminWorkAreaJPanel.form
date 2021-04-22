@@ -180,6 +180,9 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/ui/SystemAdminWorkArea/MANAGEENTERPRISE ADMIN.JPG"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="MANAGE ENTERPRISE"/>
                   </Properties>
                   <Constraints>
@@ -277,7 +280,7 @@
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/ui/SystemAdminWorkArea/hospitalimage.png"/>
+                  <Image iconType="3" name="/ui/SystemAdminWorkArea/MANAGEENTERPRISE ADMIN.JPG"/>
                 </Property>
               </Properties>
               <Constraints>

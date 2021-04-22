@@ -182,6 +182,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         manageenterprise1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/MANAGEENTERPRISE ADMIN.JPG"))); // NOI18N
         jLabel3.setText("MANAGE ENTERPRISE");
         manageenterprise1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
@@ -229,7 +230,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 290, 40));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/hospitalimage.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/MANAGEENTERPRISE ADMIN.JPG"))); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 760, 720));
 
         jSplitPane.setRightComponent(jPanel2);

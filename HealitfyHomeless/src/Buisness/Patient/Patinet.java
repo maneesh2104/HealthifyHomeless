@@ -34,6 +34,7 @@ public class Patinet {
     public Organization hospitalAssigned;
     public Doctors docAssigned;
     public boolean doctorAssigned = false;
+    public String docComments = "";
     
     public String getFullname() {
         return fullname;
@@ -167,6 +168,8 @@ public class Patinet {
     public String toString() {
         return fullname;
     }
+    
+    
     
     
     
