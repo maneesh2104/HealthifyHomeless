@@ -15,6 +15,7 @@ import java.awt.Component;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
+import java.util.logging.*;
 
 /**
  *
@@ -25,11 +26,13 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private UserAccount userAccount;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     /**
      * Creates new form RequestLabTestJPanel
      */
     public RequestLabTestJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise) {
         initComponents();
+        logr.info("LoggingIn");
         
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -109,6 +112,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             org.getWorkQueue().getWorkRequestList().add(request);
             userAccount.getWorkQueue().getWorkRequestList().add(request);
         }
+        logr.info("Request Test Clicked");
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
@@ -121,6 +125,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         dwjp.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        logr.info("Back Button Clicked");
         
     }//GEN-LAST:event_backJButtonActionPerformed
 

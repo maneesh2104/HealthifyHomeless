@@ -5,6 +5,10 @@
  */
 package Buisness.Patient;
 
+import Buisness.Hospitals.Doctors;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+
 /**
  *
  * @author maneesh
@@ -26,7 +30,11 @@ public class Patinet {
     private String disease;
     private String diagnosis;
     private String priority;
-
+    public boolean isHosAssigned = false;
+    public Organization hospitalAssigned;
+    public Doctors docAssigned;
+    public boolean doctorAssigned = false;
+    
     public String getFullname() {
         return fullname;
     }
@@ -153,6 +161,11 @@ public class Patinet {
 
     public void setPriority(String priority) {
         this.priority = priority;
+    }
+    
+    @Override
+    public String toString() {
+        return fullname;
     }
     
     

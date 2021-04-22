@@ -5,7 +5,7 @@ package ui.AdministrativeRole;
 import Business.Enterprise.Enterprise;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
-
+import java.util.logging.*;
 /**
  *
  * @author  raunak
@@ -14,9 +14,11 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     Enterprise enterprise;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     /** Creates new form AdminWorkAreaJPanel */
     public AdminWorkAreaJPanel(JPanel userProcessContainer, Enterprise enterprise) {
         initComponents();
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         valueLabel.setText(enterprise.getName());
@@ -39,20 +41,20 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         manageemployee = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel1.setText("My Work Area -Adminstrative Role");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 120, 30));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 130, -1));
 
         manageuser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         manageuser.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,16 +91,14 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         manageemployee.add(jLabel5);
 
         add(manageemployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 150, 120));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/AdministrativeRole/hospitalimage.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 720));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageorganizationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageorganizationMouseClicked
  ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory());
         userProcessContainer.add("manageOrganizationJPanel", manageOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);        // TODO add your handling code here:
+        layout.next(userProcessContainer);  
+        logr.info("Manage organization clicked");
     }//GEN-LAST:event_manageorganizationMouseClicked
 
     private void manageemployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageemployeeMouseClicked
@@ -106,7 +106,8 @@ ManageEmployeeJPanel manageEmployeeJPanel = new ManageEmployeeJPanel(userProcess
         userProcessContainer.add("manageEmployeeJPanel", manageEmployeeJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);        // TODO add your handling code here:
+        layout.next(userProcessContainer);        
+        logr.info("Manage Employess Clicked");
     }//GEN-LAST:event_manageemployeeMouseClicked
 
     private void manageuserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageuserMouseClicked
@@ -114,14 +115,14 @@ ManageEmployeeJPanel manageEmployeeJPanel = new ManageEmployeeJPanel(userProcess
         userProcessContainer.add("ManageUserAccountJPanel", muajp);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);       
+        layout.next(userProcessContainer); 
+        logr.info("Manage User Clicked");
     }//GEN-LAST:event_manageuserMouseClicked
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

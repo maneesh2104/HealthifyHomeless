@@ -7,12 +7,14 @@ package ui.DoctorRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
 
 /**
  *
@@ -21,15 +23,16 @@ import javax.swing.table.DefaultTableModel;
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private DoctorOrganization organization;
+    private Organization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DoctorOrganization organization, Enterprise enterprise) {
+    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
-        
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
@@ -49,7 +52,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             row[2] = request.getStatus();
             String result = ((LabTestWorkRequest) request).getTestResult();
             row[3] = result == null ? "Waiting" : result;
-            
             model.addRow(row);
         }
     }
@@ -144,11 +146,12 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
         layout.next(userProcessContainer);
+        logr.info("Request Test Clicked");
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-
+           logr.info("Refresh Button Clicked");
         populateRequestTable();
         
     }//GEN-LAST:event_refreshTestJButtonActionPerformed

@@ -5,6 +5,10 @@
  */
 package ui;
 
+//import java.util.logging.*;
+//private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+//logr.info("LoggingIn");
+
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -16,6 +20,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import ui.HospitalWorkArea.HospitalAdminJPanel;
+import java.util.logging.*;
 
 /**
  *
@@ -28,11 +33,14 @@ public class Home extends javax.swing.JFrame {
      */
         private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
 
     public Home() {
         initComponents();
-                system = dB4OUtil.retrieveSystem();
-
+        logr.info("LoggingIn");
+         system = dB4OUtil.retrieveSystem();
+     
         setColor(btn_1); 
         ind_1.setOpaque(true);
 //        resetColor(new JPanel[]{btn_2,btn_3,btn_4}, new JPanel[]{ind_2,ind_3, ind_4});
@@ -332,6 +340,7 @@ public class Home extends javax.swing.JFrame {
 
         Enterprise inEnterprise=null;
         Organization inOrganization=null;
+        Network inNetwork=null;
 
         if(userAccount==null){
             //Step 2: Go inside each network and check each enterprise
@@ -346,6 +355,7 @@ public class Home extends javax.swing.JFrame {
                             if(userAccount!=null){
                                 inEnterprise=enterprise;
                                 inOrganization=organization;
+                                inNetwork = network;
                                 break;
                             }
                         }
@@ -371,7 +381,7 @@ public class Home extends javax.swing.JFrame {
         }
         else{
             CardLayout layout=(CardLayout)jPanel6.getLayout();
-            jPanel6.add("workArea",userAccount.getRole().createWorkArea(jPanel6, userAccount, inOrganization, inEnterprise, system));
+            jPanel6.add("workArea",userAccount.getRole().createWorkArea(jPanel6, userAccount, inOrganization, inEnterprise, system, inNetwork));
             layout.next(jPanel6);
         }
 

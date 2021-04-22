@@ -7,12 +7,14 @@ package ui.NGOAdminWorkArea;
 
 import Buisness.Patient.PatientDirectory;
 import Business.Organization.Organization;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class AddpatinetJFrame extends javax.swing.JFrame {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form AddpatinetJFrame
@@ -21,6 +23,7 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
     public AddpatinetJFrame(Organization org) {
         this.org = org;
         initComponents();
+        logr.info("LoggingIn");
         populateTable();
     }
 
@@ -50,8 +53,10 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -59,9 +64,9 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
         getContentPane().add(txtHeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 141, -1));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setText("Add Patinet");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("Add Patient");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 200, -1));
         getContentPane().add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 141, -1));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -93,8 +98,9 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
         jLabel5.setText("Disease");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jButton1.setText("Save Patient");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -102,10 +108,12 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jLabel9.setText("jLabel9");
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/wheelchair.png"))); // NOI18N
         jLabel9.setPreferredSize(new java.awt.Dimension(768, 768));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 710));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 160));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/patient.JPG"))); // NOI18N
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 320, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -115,6 +123,7 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
         org.getPatientDirectory().createPatient(txtName.getText(),Integer.parseInt(txtAge.getText()), Integer.parseInt(txtWeight.getText()) ,
                 Integer.parseInt(txtHeight.getText()) , txtBloodGroup.getText(), txtSymptoms.getText(), txtDisease.getText());
         this.dispose();
+        logr.info("Save Patient Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -155,6 +164,7 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -10,6 +10,7 @@ import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
 
 /**
  *
@@ -19,12 +20,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
     /**
      * Creates new form ManageOrganizationJPanel
      */
     public ManageEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir) {
         initComponents();
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
         
@@ -167,6 +170,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
+        logr.info("Create Employees Button Clicked");
         
     }//GEN-LAST:event_addJButtonActionPerformed
 
@@ -175,6 +179,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed

@@ -5,26 +5,35 @@
  */
 package ui.NGOAdminWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import ui.SystemAdminWorkArea.ManageNetworkJPanel;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class NgoLoginPage extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form NgoLoginPage
      */
     JPanel container;
     Organization org;
-    public NgoLoginPage(JPanel container, Organization org) {
+    Enterprise enterprise;
+    Network network;
+    public NgoLoginPage(JPanel container, Organization org, Enterprise enterprise, Network network) {
         this.container = container;
         this.org = org;
+        this.enterprise = enterprise;
+        this.network = network;
         initComponents();
+        logr.info("LoggingIn");
     }
 
     /**
@@ -41,6 +50,7 @@ public class NgoLoginPage extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
@@ -53,31 +63,15 @@ public class NgoLoginPage extends javax.swing.JPanel {
                 managepatientsMouseClicked(evt);
             }
         });
+        managepatients.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("MANAGE PATIENTS");
-
-        javax.swing.GroupLayout managepatientsLayout = new javax.swing.GroupLayout(managepatients);
-        managepatients.setLayout(managepatientsLayout);
-        managepatientsLayout.setHorizontalGroup(
-            managepatientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(managepatientsLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel2)
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        managepatientsLayout.setVerticalGroup(
-            managepatientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(managepatientsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(211, Short.MAX_VALUE))
-        );
+        managepatients.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 13, -1, -1));
 
         add(managepatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 220, 240));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 730));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/VolunteerOPaque.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 610, 570));
     }// </editor-fold>//GEN-END:initComponents
 
     private void managepatientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepatientsMouseClicked
@@ -86,8 +80,17 @@ public class NgoLoginPage extends javax.swing.JPanel {
         container.add("manageNetworkJPanel",manageNetworkJPanel);
         CardLayout layout=(CardLayout)container.getLayout();
         layout.next(container);
+        logr.info("Manage Patient Button Clicked");
                 
     }//GEN-LAST:event_managepatientsMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        AssignToHospitalPanel assignHospital=new AssignToHospitalPanel(org, enterprise, container, network);
+        container.add("manageNetworkJPanel",assignHospital);
+        CardLayout layout=(CardLayout)container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

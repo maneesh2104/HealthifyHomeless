@@ -9,12 +9,14 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Network.Network;
 import javax.swing.JOptionPane;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class UpdateNetworkJFrame extends javax.swing.JFrame {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form UpdateNetworkJFrame
@@ -24,6 +26,7 @@ public class UpdateNetworkJFrame extends javax.swing.JFrame {
     private ManageNetworkJPanel panel;
     public UpdateNetworkJFrame(EcoSystem system, Network network, ManageNetworkJPanel panel) {
         initComponents();
+        logr.info("LoggingIn");
         this.system = system;
         this.selectedNetwork = network;
         this.panel = panel;
@@ -98,11 +101,13 @@ public class UpdateNetworkJFrame extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "The Network cannot be null");
         }
+        logr.info("Save Button Clicked");
 
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         this.dispose();
+        logr.info("Cancel Button Clicked");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     /**

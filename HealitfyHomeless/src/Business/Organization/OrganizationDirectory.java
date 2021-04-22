@@ -37,6 +37,11 @@ public class OrganizationDirectory {
             organization = new NgoOrganization(address);
             organizationList.add(organization);
         }
+        else if (type.getValue().equals(Type.Hospital.getValue())){
+            organization = new HospitalOrganization(name,address);
+            organizationList.add(organization);
+        }
+        
         return organization;
     }
 }

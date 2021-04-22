@@ -4,18 +4,23 @@
  * and open the template in the editor.
  */
 package ui.NGOAdminWorkArea;
+import java.util.logging.*;
+
 
 /**
  *
  * @author maneesh
  */
 public class HealthProviderLoginPage extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form HealthProviderLoginPage
      */
     public HealthProviderLoginPage() {
         initComponents();
+        logr.info("LoggingIn");
+        
     }
 
     /**

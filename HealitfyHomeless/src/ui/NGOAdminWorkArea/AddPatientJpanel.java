@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package ui.NGOAdminWorkArea;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class AddPatientJpanel extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form AddPatientJpanel
      */
     public AddPatientJpanel() {
+        logr.info("LoggingIn");
         initComponents();
     }
 
@@ -39,13 +42,16 @@ public class AddPatientJpanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Add Patinet Form");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 11, 147, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
+        jLabel1.setText("Add Patient Form");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 330, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel2.setText("Existing Patients");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 52, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 160, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -60,30 +66,28 @@ public class AddPatientJpanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 72, 375, 231));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 375, 231));
 
         jTextField1.setText("jTextField1");
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, -1, -1));
 
         jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
 
         jLabel4.setText("jLabel3");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, -1, -1));
 
         jTextField2.setText("jTextField1");
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, -1, -1));
 
         jTextField3.setText("jTextField1");
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, -1, -1));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, -1, -1));
 
         jLabel5.setText("jLabel3");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        jLabel6.setPreferredSize(new java.awt.Dimension(768, 768));
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 710));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/patient.JPG"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 330, 250));
     }// </editor-fold>//GEN-END:initComponents
 
 

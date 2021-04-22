@@ -4,18 +4,21 @@
  * and open the template in the editor.
  */
 package ui.NGOAdminWorkArea;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class NewPatientForm extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form NewPatientForm
      */
     public NewPatientForm() {
         initComponents();
+        logr.info("LoggingIn");
     }
 
     /**
@@ -45,82 +48,94 @@ public class NewPatientForm extends javax.swing.JPanel {
         jTextField7 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setText("Add Patinet");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 11, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("Add Patient");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
+        jTextField1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 141, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 141, -1));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel3.setText("Age");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
+        jTextField2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 141, -1));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 141, -1));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 141, -1));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 141, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel4.setText("Weight");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel5.setText("Disease");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButton1.setText("Save Patient");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 130, 40));
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel6.setText("Height");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
+        jTextField4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
             }
         });
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 141, -1));
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 141, -1));
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 141, -1));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jTextField5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 141, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel7.setText("Blood group");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
-        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 141, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jTextField6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 141, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel8.setText("Symptoms");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
-        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 141, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
+        jTextField7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 141, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/sick.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
-        jLabel9.setPreferredSize(new java.awt.Dimension(768, 768));
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 700));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 480));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+logr.info("Save Patient Button Clicked");        // TODO add your handling code here:
         
         
         
