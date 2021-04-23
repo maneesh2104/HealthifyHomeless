@@ -5,6 +5,7 @@
  */
 package ui.NGOAdminWorkArea;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,20 +33,20 @@ public class NewPatientForm extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtage = new javax.swing.JTextField();
+        txtweight = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtheight = new javax.swing.JTextField();
+        txtbloodgroup = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtsymptons = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtdis = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -59,28 +60,28 @@ public class NewPatientForm extends javax.swing.JPanel {
         jLabel2.setText("Name");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtname.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtnameActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 141, -1));
+        add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 141, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel3.setText("Age");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtage.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtageActionPerformed(evt);
             }
         });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 141, -1));
+        add(txtage, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 141, -1));
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 141, -1));
+        txtweight.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtweight, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 141, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel4.setText("Weight");
@@ -104,30 +105,30 @@ public class NewPatientForm extends javax.swing.JPanel {
         jLabel6.setText("Height");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtheight.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtheight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtheightActionPerformed(evt);
             }
         });
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 141, -1));
+        add(txtheight, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 141, -1));
 
-        jTextField5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 141, -1));
+        txtbloodgroup.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtbloodgroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 141, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel7.setText("Blood group");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 141, -1));
+        txtsymptons.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtsymptons, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 141, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel8.setText("Symptoms");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
-        jTextField7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 141, -1));
+        txtdis.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtdis, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 141, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/sick.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -135,23 +136,52 @@ public class NewPatientForm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-logr.info("Save Patient Button Clicked");        // TODO add your handling code here:
+if(txtname.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+       if(txtage.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Age cannot be empty");
+            return;
+       }
+       if(txtweight.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Weight cannot be empty");
+            return;
+       }
+       if(txtheight.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Height cannot be empty");
+            return;
+       }
+        if(txtbloodgroup.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Blood Group cannot be empty");
+            return;
+       }
+        if(txtsymptons.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Symptons cannot be empty");
+            return;
+       }
+        if(txtdis.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Disease cannot be empty");
+            return;
+       }
+        
+        logr.info("Save Patient Button Clicked");        // TODO add your handling code here:
         
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtageActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtheightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtheightActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtheightActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtnameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -165,12 +195,12 @@ logr.info("Save Patient Button Clicked");        // TODO add your handling code 
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField txtage;
+    private javax.swing.JTextField txtbloodgroup;
+    private javax.swing.JTextField txtdis;
+    private javax.swing.JTextField txtheight;
+    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtsymptons;
+    private javax.swing.JTextField txtweight;
     // End of variables declaration//GEN-END:variables
 }

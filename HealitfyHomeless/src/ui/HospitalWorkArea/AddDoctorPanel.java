@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import ui.NGOAdminWorkArea.TableColors;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -181,11 +182,14 @@ private void initComponents() {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-             logr.info("Update Button Clicked");        
+             logr.info("Update Button Clicked");   
+             JOptionPane.showMessageDialog(this, "Details Updated");
+             
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-             logr.info("Delete Button Clicked");        
+             logr.info("Delete Button Clicked");   
+             JOptionPane.showMessageDialog(this, "Deleted Successfully");
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

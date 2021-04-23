@@ -87,6 +87,13 @@ public class UpdateNetworkJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+
+        if(nameTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+
+
         String name = nameTextField.getText();
         if(!name.equals("")){
             if(!system.isDuplicateNetwork(name)){

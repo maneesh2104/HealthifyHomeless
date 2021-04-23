@@ -22,6 +22,7 @@ import ui.HospitalWorkArea.ProcessPatientJFrame;
 import ui.NGOAdminWorkArea.AddpatinetJFrame;
 import ui.NGOAdminWorkArea.TableColors;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -177,7 +178,12 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             addForm.setLocationRelativeTo(null);
             addForm.setVisible(true);
             populateRequestTable();
-        }
+        }        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
+        layout.next(userProcessContainer);
+        logr.info("Request Test Clicked");
+        JOptionPane.showMessageDialog(this, "Requested Successfully");
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 

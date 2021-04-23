@@ -8,6 +8,7 @@ package ui.NGOAdminWorkArea;
 import Buisness.Patient.PatientDirectory;
 import Business.Organization.Organization;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -119,7 +120,34 @@ public class AddpatinetJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+if(txtName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+       if(txtAge.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Age cannot be empty");
+            return;
+       }
+       if(txtWeight.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Weight cannot be empty");
+            return;
+       }
+       if(txtHeight.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Height cannot be empty");
+            return;
+       }
+        if(txtBloodGroup.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Blood Group cannot be empty");
+            return;
+       }
+        if(txtSymptoms.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Symptons cannot be empty");
+            return;
+       }   
+        if(txtDisease.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Disesse cannot be empty");
+            return;
+       }   // TODO add your handling code here:
         org.getPatientDirectory().createPatient(txtName.getText(),Integer.parseInt(txtAge.getText()), Integer.parseInt(txtWeight.getText()) ,
                 Integer.parseInt(txtHeight.getText()) , txtBloodGroup.getText(), txtSymptoms.getText(), txtDisease.getText());
         this.dispose();
