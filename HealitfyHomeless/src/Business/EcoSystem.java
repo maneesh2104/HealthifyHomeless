@@ -5,6 +5,7 @@
  */
 package Business;
 
+import Buisness.Funds.FundsDirectory;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Role.Role;
@@ -19,6 +20,8 @@ public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private ArrayList<Network> networkList;
+    public double totalFunds = 0.0;
+    public FundsDirectory funds;
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
@@ -31,6 +34,29 @@ public class EcoSystem extends Organization{
         networkList.add(network);
         return network;
     }
+    
+    public void removeNetwork(Network network) {
+        networkList.remove(network);
+    }
+    
+    public boolean isDuplicateNetwork(String name) {
+     for(Network n:networkList){
+            if(n.equals(name)){
+                return true;
+            }
+        }    
+    return false;
+    }
+    
+     public void updateNetwork(Network network,String name){
+        for(Network n:networkList){
+            if(n.equals(network)){
+                n.setName(name);
+            }
+        }
+    }
+
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<Role>();
@@ -40,6 +66,15 @@ public class EcoSystem extends Organization{
     private EcoSystem(){
         super(null);
         networkList=new ArrayList<Network>();
+        funds = new FundsDirectory();
+    }
+
+    public FundsDirectory getFunds() {
+        return funds;
+    }
+
+    public void setFunds(FundsDirectory funds) {
+        this.funds = funds;
     }
 
     public ArrayList<Network> getNetworkList() {
