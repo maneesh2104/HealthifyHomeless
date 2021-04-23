@@ -51,6 +51,7 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
+        setMaximumSize(null);
         setPreferredSize(new java.awt.Dimension(1000, 800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -149,7 +150,7 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/funds_app.jpg"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 800));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 780));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
