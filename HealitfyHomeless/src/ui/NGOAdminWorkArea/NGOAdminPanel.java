@@ -62,13 +62,16 @@ public class NGOAdminPanel extends javax.swing.JPanel {
         );
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1000, 800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Homeless Data Providing Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 410, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1000, 30));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -77,25 +80,30 @@ public class NGOAdminPanel extends javax.swing.JPanel {
         });
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText(" Add Organization");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 230, 30));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 280, 50));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/organization..jpg"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 250, 230));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/add-org.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 280, 120));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 280, 250));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 280, 250));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/NGOOPAQUE.png"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 610, 630));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/ngo_data_bg.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jLabel4.setPreferredSize(new java.awt.Dimension(1000, 800));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 810));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-AddOrganizationJpanel addOrganization=new AddOrganizationJpanel(userProcessContainer, ecosystem, enterprise);
+        AddOrganizationJpanel addOrganization=new AddOrganizationJpanel(userProcessContainer, ecosystem, enterprise);
         userProcessContainer.add("addOrganization",addOrganization);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);  
+        layout.next(userProcessContainer);
         logr.info("Add Organization Button Clicked");// TODO add your handling code here:
     }//GEN-LAST:event_jPanel2MouseClicked
 
