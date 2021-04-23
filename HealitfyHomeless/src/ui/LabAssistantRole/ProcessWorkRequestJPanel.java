@@ -9,6 +9,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 
 
@@ -87,6 +88,11 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+if(resultJTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Kindly Fill the Result");
+            return;
+        }
+
         request.setTestResult(resultJTextField.getText());
         request.setStatus("Completed");
         logr.info("Submit Button Clicked");

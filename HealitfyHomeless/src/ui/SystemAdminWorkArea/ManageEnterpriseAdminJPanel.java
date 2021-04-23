@@ -95,7 +95,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         networkJComboBox = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
-        usernameJTextField = new javax.swing.JTextField();
+        usernametxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         enterpriseJComboBox = new javax.swing.JComboBox();
         submitJButton = new javax.swing.JButton();
@@ -146,7 +146,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Username");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 294, -1, -1));
-        add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 291, 136, -1));
+        add(usernametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 291, 136, -1));
 
         jLabel3.setText("Enterprise");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 255, -1, -1));
@@ -197,10 +197,21 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_networkJComboBoxActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        
+ if(usernametxt.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "UserName cannot be empty");
+            return;
+        }
+       if(passwordJPasswordField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Password cannot be empty");
+            return;
+       }
+       if(nameJTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;  
+       }
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
         
-        String username = usernameJTextField.getText();
+        String username = usernametxt.getText();
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String name = nameJTextField.getText();
         if(username.isEmpty() || password.isEmpty() || name.isEmpty()){
@@ -221,7 +232,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 
                 
                 
-                usernameJTextField.setText("");
+                usernametxt.setText("");
                 passwordJPasswordField.setText("");
                 nameJTextField.setText("");
                 JOptionPane.showMessageDialog(null, "Account created sucessfully");
@@ -229,6 +240,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }else {
                 JOptionPane.showMessageDialog(null, "Please enter unique username", "Warning", JOptionPane.WARNING_MESSAGE);
             }
+            JOptionPane.showMessageDialog(this, "Added Successfully");
         }
         logr.info("Submit Button Clicked");
         
@@ -256,6 +268,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox networkJComboBox;
     private javax.swing.JPasswordField passwordJPasswordField;
     private javax.swing.JButton submitJButton;
-    private javax.swing.JTextField usernameJTextField;
+    private javax.swing.JTextField usernametxt;
     // End of variables declaration//GEN-END:variables
 }

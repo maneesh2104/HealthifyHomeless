@@ -14,6 +14,7 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -174,6 +175,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         logr.info("Process Button Clicked");
+        JOptionPane.showMessageDialog(this, "Processed");
         
     }//GEN-LAST:event_processJButtonActionPerformed
 

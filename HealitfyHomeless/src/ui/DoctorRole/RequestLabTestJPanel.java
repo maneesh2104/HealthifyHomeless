@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -93,7 +94,11 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-        
+
+if(messageJTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "You need to write a message");
+            return;
+        }        
         String message = messageJTextField.getText();
         
         LabTestWorkRequest request = new LabTestWorkRequest();

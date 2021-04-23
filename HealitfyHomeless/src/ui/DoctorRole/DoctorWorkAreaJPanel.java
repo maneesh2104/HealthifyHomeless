@@ -15,6 +15,7 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -147,6 +148,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
         layout.next(userProcessContainer);
         logr.info("Request Test Clicked");
+        JOptionPane.showMessageDialog(this, "Requested Successfully");
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 

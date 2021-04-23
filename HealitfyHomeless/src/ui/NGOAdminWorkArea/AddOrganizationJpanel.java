@@ -64,10 +64,10 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         typeCombo = new javax.swing.JComboBox();
+        txtPassword = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -129,13 +129,6 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         jLabel5.setText("Password");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
 
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 171, -1));
-
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 102, 0));
         jButton1.setText("Create");
@@ -158,8 +151,11 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         });
         add(typeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 171, -1));
 
+        txtPassword.setText("jPasswordField1");
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 160, -1));
+
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/woring lady.jpg"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 590, 540));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 590, 450));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -174,12 +170,24 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
 
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+ if(txtName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+       if(txtAddress.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Address cannot be empty");
+            return;
+       }
+       if(txtUserName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "UserName cannot be empty");
+            return;
+       }
+       if(txtPassword.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Password cannot be empty");
+            return;
+       }
+             // TODO add your handling code here:
         //Add organiztion
         //Prefill type from organization
         Organization.Type type = (Organization.Type) typeCombo.getSelectedItem();
@@ -242,7 +250,7 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     private javax.swing.JComboBox typeCombo;
     // End of variables declaration//GEN-END:variables

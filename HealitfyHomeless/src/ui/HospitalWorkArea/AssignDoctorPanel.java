@@ -164,6 +164,7 @@ public class AssignDoctorPanel extends javax.swing.JPanel {
                 p.doctorAssigned = true;
                 p.docAssigned = doc;
                 //org.getAssignedPatientDirectort().addPatient(p); 
+                JOptionPane.showMessageDialog(this, "Doctor Assigned");
         }
         logr.info("Assign Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed

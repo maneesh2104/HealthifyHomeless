@@ -68,20 +68,20 @@ public class AddPatientJpanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 375, 231));
 
-        jTextField1.setText("jTextField1");
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, -1, -1));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 110, -1));
 
         jLabel3.setText("jLabel3");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
 
         jLabel4.setText("jLabel3");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, -1, -1));
-
-        jTextField2.setText("jTextField1");
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, -1, -1));
-
-        jTextField3.setText("jTextField1");
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, -1, -1));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 110, -1));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 120, -1));
 
         jLabel5.setText("jLabel3");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, -1, -1));
@@ -89,6 +89,10 @@ public class AddPatientJpanel extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/patient.JPG"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 330, 250));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

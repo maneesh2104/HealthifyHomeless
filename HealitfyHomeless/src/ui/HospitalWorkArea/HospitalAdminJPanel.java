@@ -91,16 +91,6 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
     private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {                                            
         // TODO add your handling code here:
-        AddDoctorPanel addDoctor = new AddDoctorPanel(userProcessContainer,organization);
-        userProcessContainer.add("addOrganization",addDoctor);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        logr.info("Assign Doctor Button Clicked");
-    }                                        
-
-
-    private void adddoctorMouseClicked(java.awt.event.MouseEvent evt) {                                       
-        // TODO add your handling code here:
         AssignDoctorPanel aDoc = new AssignDoctorPanel(userProcessContainer, organization);
         userProcessContainer.add("addOrganization",aDoc);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
@@ -108,6 +98,18 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         logr.info("Add Doctor Button Clicked");
     }                                        
 
+        
+
+    private void adddoctorMouseClicked(java.awt.event.MouseEvent evt) {                                       
+        // TODO add your handling code here:
+
+AddDoctorPanel addDoctor = new AddDoctorPanel(userProcessContainer,organization);
+        userProcessContainer.add("addOrganization",addDoctor);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        logr.info("Assign Doctor Button Clicked");
+    }                                        
+        
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
