@@ -78,7 +78,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
      */
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 private void initComponents() {
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();

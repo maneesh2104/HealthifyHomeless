@@ -128,7 +128,11 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
             }
         });
 
-        txtPassword.setText("jPasswordField1");
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -286,6 +290,10 @@ if(txtPassword.getText().isEmpty()){
     private void typeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeComboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_typeComboActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

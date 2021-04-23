@@ -159,7 +159,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 32, 158, 26));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/DoctorRole/hospitalimage.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(768, 768));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 700));

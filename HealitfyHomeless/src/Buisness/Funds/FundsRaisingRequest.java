@@ -15,7 +15,7 @@ public class FundsRaisingRequest {
     String phone;
     String ssn;
     String email;
-    String ammount;
+    double ammount;
 
     public String getName() {
         return name;
@@ -49,11 +49,11 @@ public class FundsRaisingRequest {
         this.email = email;
     }
 
-    public String getAmmount() {
+    public double getAmmount() {
         return ammount;
     }
 
-    public void setAmmount(String ammount) {
+    public void setAmmount(double ammount) {
         this.ammount = ammount;
     }
     

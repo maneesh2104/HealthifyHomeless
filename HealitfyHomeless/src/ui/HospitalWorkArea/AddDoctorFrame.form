@@ -36,13 +36,13 @@
                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtName" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="txtQali" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="txtDep" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="txtSpecality" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="txtUsername" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="txtPassword" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtName" pref="128" max="32767" attributes="0"/>
+                          <Component id="txtQali" pref="128" max="32767" attributes="0"/>
+                          <Component id="txtDep" pref="128" max="32767" attributes="0"/>
+                          <Component id="txtSpecality" pref="128" max="32767" attributes="0"/>
+                          <Component id="txtUsername" pref="128" max="32767" attributes="0"/>
+                          <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -50,7 +50,7 @@
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -180,9 +180,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtPassword">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPasswordActionPerformed"/>
       </Events>

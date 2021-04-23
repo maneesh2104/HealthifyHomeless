@@ -6,6 +6,8 @@
 package ui;
 
 import Buisness.Funds.FundsRaisingRequest;
+import Business.EcoSystem;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,8 +18,10 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
     /**
      * Creates new form FundsApplicationPanel
      */
-    public FundsApplicationPanel() {
+    EcoSystem system;
+    public FundsApplicationPanel(EcoSystem system) {
         initComponents();
+        this.system = system;
     }
 
     /**
@@ -182,10 +186,29 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        
-        //Send fund Application
-        
+        if(txtName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+       if(txtAmmount.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Ammount cannot be empty");
+            return;
+       }
+       if(txtEmail.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Email cannot be empty");
+            return;
+       }
+       if(txtSssn.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "SSN cannot be empty");
+            return;
+       }
+       if(txtPhone.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Phone cannot be empty");
+            return;
+       }
+       
+        system.funds.createNewFundReq(txtAmmount.getText(), txtEmail.getText(), txtSssn.getText(), txtPhone.getText(), txtName.getText());
+        JOptionPane.showMessageDialog(this, "Funds request Sucessfully sent");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -163,8 +163,6 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
                 populateTable1();
         }
         logr.info("Assign to Hospital Button Clicked");
-        //jTable1.getSele
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -256,7 +254,6 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         for(Organization org: orgList){
             System.out.println(org.getName());
         }
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
