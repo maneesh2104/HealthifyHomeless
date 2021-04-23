@@ -48,12 +48,15 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         adddoctor = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         assigntodoctor = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/hospitalimage.png"))); // NOI18N
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -85,9 +88,19 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
         add(assigntodoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 180, 240));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/hospitalimage.png"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 710));
+        jButton1.setText("Generat Bills");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {                                            
         // TODO add your handling code here:
@@ -116,6 +129,7 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adddoctor;
     private javax.swing.JPanel assigntodoctor;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

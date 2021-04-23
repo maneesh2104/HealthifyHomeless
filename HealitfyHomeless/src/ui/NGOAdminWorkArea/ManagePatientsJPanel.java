@@ -5,6 +5,7 @@
  */
 package ui.NGOAdminWorkArea;
 
+import Buisness.Hospitals.Doctors;
 import Buisness.Patient.PatientDirectory;
 import Buisness.Patient.Patinet;
 import Business.Organization.NgoOrganization;
@@ -17,6 +18,8 @@ import static ui.NGOAdminWorkArea.AddpatinetJFrame.org;
 import ui.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 import ui.SystemAdminWorkArea.UpdateNetworkJFrame;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
+import ui.HospitalWorkArea.UpdateDoctor;
 
 /**
  *
@@ -33,7 +36,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     public ManagePatientsJPanel(Organization org, JPanel container) {
         this.org = org;
         initComponents();
-        logr.info("LoggingIn");
+        logr.info("Enetring Manage Patinets Jpanel");
         this.container = container;
         populateTable();
        
@@ -51,7 +54,6 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -82,16 +84,6 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         jLabel1.setText("Manage Patients");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 350, -1));
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jButton1.setText("Update");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 90, 40));
-
         jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButton2.setText("New Patient");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -100,7 +92,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 100, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 100, 40));
 
         jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButton3.setText("Delete");
@@ -110,7 +102,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 110, 40));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 110, 40));
 
         jButton4.setText("Refresh");
         jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -154,24 +146,27 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-         container.remove(this);
-         
+        container.remove(this);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
         logr.info("Back Button Clicked");
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        logr.info("Update Button Clicked");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow < 0){
+            JOptionPane.showMessageDialog(this,
+                "Please select one row and then press Delete");
+        }
+        else{
+            Patinet p= (Patinet) jTable1.getValueAt(selectedRow, 0);
+            org.getPatientDirectory().deletePatient(p);
+        }
         logr.info("Delete Button Clicked");
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -195,14 +190,12 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         
         for (Patinet patient : pd.getPatientList()){
         {
-//             if(organization instanceof NgoOrganization){
                 Object[] row = new Object[4];
-                row[0] = patient.getFullname();
+                row[0] = patient;
                 row[1] = patient.getAge();
                 row[2] = patient.getSymptoms();
                 row[3] = patient.getDisease();
                 model.addRow(row);
-//             }
         }
             
         }

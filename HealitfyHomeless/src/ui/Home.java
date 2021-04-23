@@ -384,6 +384,7 @@ public class Home extends javax.swing.JFrame {
         }
         else{
             CardLayout layout=(CardLayout)jPanel6.getLayout();
+            jLabel12.setText(userAccount.getUsername());
             jPanel6.add("workArea",userAccount.getRole().createWorkArea(jPanel6, userAccount, inOrganization, inEnterprise, system, inNetwork));
             layout.next(jPanel6);
         }
