@@ -319,6 +319,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_exitMousePressed
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
+        // Get user name
         String userName = userNameJTextField.getText();
         // Get Password
         char[] passwordCharArray = passwordField.getPassword();
