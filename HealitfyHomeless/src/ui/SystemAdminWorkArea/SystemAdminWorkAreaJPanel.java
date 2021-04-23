@@ -146,7 +146,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(800, 800));
         setPreferredSize(new java.awt.Dimension(1000, 800));
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(440, 300));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 800));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         managenetwork4.setBackground(new java.awt.Color(255, 255, 255));
