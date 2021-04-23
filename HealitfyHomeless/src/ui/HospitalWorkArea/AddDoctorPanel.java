@@ -185,21 +185,24 @@ private void initComponents() {
             JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-                Doctors p = (Doctors)jTable1.getValueAt(selectedRow, 0);
-                UpdateDoctor updateDoc = new UpdateDoctor(org, p);
-                updateDoc.setLocationRelativeTo(null);
-                updateDoc.setVisible(true);
-
-                //org.getAssignedPatientDirectort().addPatient(p); 
+            Doctors p = (Doctors)jTable1.getValueAt(selectedRow, 0);
+            UpdateDoctor updateDoc = new UpdateDoctor(org, p);
+            updateDoc.setLocationRelativeTo(null);
+            updateDoc.setVisible(true);
         } 
-        logr.info("Update Button Clicked");   
-             
+        logr.info("Update Button Clicked"); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-             
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            Doctors p = (Doctors)jTable1.getValueAt(selectedRow, 0);
+            org.getDoctorDirectory().deleteDoctor(p);
         logr.info("Delete Button Clicked");   
-             JOptionPane.showMessageDialog(this, "Deleted Successfully");
+        JOptionPane.showMessageDialog(this, "Deleted Successfully");
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
