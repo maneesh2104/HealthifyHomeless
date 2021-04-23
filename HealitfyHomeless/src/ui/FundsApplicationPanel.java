@@ -9,6 +9,13 @@ import Buisness.Funds.FundsDirectory;
 import Buisness.Funds.FundsRaisingRequest;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 
 /**
