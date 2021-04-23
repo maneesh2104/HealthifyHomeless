@@ -21,7 +21,7 @@ public class PharamcyAdminRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-       return new MedicineProviderAdminPanle(); //To change body of generated methods, choose Tools | Templates.
+       return new MedicineProviderAdminPanle(userProcessContainer, account,organization, enterprise, business); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
