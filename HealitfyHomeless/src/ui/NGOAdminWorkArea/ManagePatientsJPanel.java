@@ -5,7 +5,6 @@
  */
 package ui.NGOAdminWorkArea;
 
-import Buisness.Hospitals.Doctors;
 import Buisness.Patient.PatientDirectory;
 import Buisness.Patient.Patinet;
 import Business.Organization.NgoOrganization;
@@ -19,7 +18,6 @@ import ui.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 import ui.SystemAdminWorkArea.UpdateNetworkJFrame;
 import java.util.logging.*;
 import javax.swing.JOptionPane;
-import ui.HospitalWorkArea.UpdateDoctor;
 
 /**
  *
@@ -36,7 +34,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     public ManagePatientsJPanel(Organization org, JPanel container) {
         this.org = org;
         initComponents();
-        logr.info("Enetring Manage Patinets Jpanel");
+        logr.info("LoggingIn");
         this.container = container;
         populateTable();
        
@@ -54,14 +52,14 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1000, 800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -75,68 +73,67 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 "Name", "Age", "Symptoms", "Disease"
             }
         ));
+        jTable1.setRowHeight(30);
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 409, 190));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 200, 620, 150));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Patients");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 350, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1000, 60));
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jButton2.setText("New Patient");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(51, 204, 255));
+        jButton1.setFont(jButton1.getFont().deriveFont(jButton1.getFont().getStyle() | java.awt.Font.BOLD, jButton1.getFont().getSize()+1));
+        jButton1.setForeground(new java.awt.Color(0, 102, 153));
+        jButton1.setText("Update");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 100, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 270, 40));
 
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(51, 204, 255));
+        jButton3.setFont(jButton3.getFont().deriveFont(jButton3.getFont().getStyle() | java.awt.Font.BOLD, jButton3.getFont().getSize()+1));
+        jButton3.setForeground(new java.awt.Color(0, 102, 153));
         jButton3.setText("Delete");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 110, 40));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 270, 40));
 
+        jButton4.setBackground(new java.awt.Color(51, 204, 255));
+        jButton4.setFont(jButton4.getFont().deriveFont(jButton4.getFont().getStyle() | java.awt.Font.BOLD, jButton4.getFont().getSize()+1));
+        jButton4.setForeground(new java.awt.Color(0, 102, 153));
         jButton4.setText("Refresh");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        jButton4.setPreferredSize(new java.awt.Dimension(400, 40));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 270, -1));
 
-        jButton5.setText("Back");
+        jButton5.setText("<<Back");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, -1));
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/patient line.JPG"))); // NOI18N
-        jLabel2.setPreferredSize(new java.awt.Dimension(768, 768));
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 490, 330));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/iconfinder_website_-_male_user_3440844 (1).png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 100));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/patient_line.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 1000, 600));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-         AddpatinetJFrame addForm = new AddpatinetJFrame(org);
-         addForm.setLocationRelativeTo(null);
-         addForm.setVisible(true);
-         logr.info("New Patient Button Clicked");
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -146,11 +143,16 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        container.remove(this);
+         container.remove(this);
+         
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
         logr.info("Back Button Clicked");
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        logr.info("Update Button Clicked");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int selectedRow = jTable1.getSelectedRow();
@@ -167,13 +169,12 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
@@ -190,12 +191,14 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         
         for (Patinet patient : pd.getPatientList()){
         {
+//             if(organization instanceof NgoOrganization){
                 Object[] row = new Object[4];
                 row[0] = patient;
                 row[1] = patient.getAge();
                 row[2] = patient.getSymptoms();
                 row[3] = patient.getDisease();
                 model.addRow(row);
+//             }
         }
             
         }

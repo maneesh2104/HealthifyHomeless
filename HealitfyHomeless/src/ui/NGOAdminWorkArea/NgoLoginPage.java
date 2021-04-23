@@ -46,62 +46,83 @@ public class NgoLoginPage extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        managepatients = new javax.swing.JPanel();
+        assignToHospital = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        managepatients1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1000, 800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("NGO Logged in");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 330, 59));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1000, 59));
 
-        managepatients.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        managepatients.addMouseListener(new java.awt.event.MouseAdapter() {
+        assignToHospital.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        assignToHospital.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                managepatientsMouseClicked(evt);
+                assignToHospitalMouseClicked(evt);
             }
         });
 
-        jLabel2.setText("MANAGE PATIENTS");
+        jLabel2.setFont(jLabel2.getFont().deriveFont(jLabel2.getFont().getStyle() | java.awt.Font.BOLD, jLabel2.getFont().getSize()+3));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ASSIGN TO HOSPITAL");
 
-        javax.swing.GroupLayout managepatientsLayout = new javax.swing.GroupLayout(managepatients);
-        managepatients.setLayout(managepatientsLayout);
-        managepatientsLayout.setHorizontalGroup(
-            managepatientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(managepatientsLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel2)
-                .addContainerGap(61, Short.MAX_VALUE))
+        javax.swing.GroupLayout assignToHospitalLayout = new javax.swing.GroupLayout(assignToHospital);
+        assignToHospital.setLayout(assignToHospitalLayout);
+        assignToHospitalLayout.setHorizontalGroup(
+            assignToHospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
         );
-        managepatientsLayout.setVerticalGroup(
-            managepatientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(managepatientsLayout.createSequentialGroup()
-                .addContainerGap()
+        assignToHospitalLayout.setVerticalGroup(
+            assignToHospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, assignToHospitalLayout.createSequentialGroup()
+                .addContainerGap(184, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
 
-        add(managepatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 220, 240));
+        add(assignToHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 220, 240));
 
-        jButton1.setText("Pay Bills");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        managepatients1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        managepatients1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                managepatients1MouseClicked(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
+
+        jLabel3.setFont(jLabel3.getFont().deriveFont(jLabel3.getFont().getStyle() | java.awt.Font.BOLD, jLabel3.getFont().getSize()+3));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("MANAGE PATIENTS");
+
+        javax.swing.GroupLayout managepatients1Layout = new javax.swing.GroupLayout(managepatients1);
+        managepatients1.setLayout(managepatients1Layout);
+        managepatients1Layout.setHorizontalGroup(
+            managepatients1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+        );
+        managepatients1Layout.setVerticalGroup(
+            managepatients1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, managepatients1Layout.createSequentialGroup()
+                .addContainerGap(184, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(32, 32, 32))
+        );
+
+        add(managepatients1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 220, 240));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void managepatientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepatientsMouseClicked
+    private void assignToHospitalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assignToHospitalMouseClicked
  // TODO add your handling code here:
-        ManagePatientsJPanel manageNetworkJPanel=new ManagePatientsJPanel(org, container);
-        container.add("manageNetworkJPanel",manageNetworkJPanel);
+        AssignToHospitalPanel assignHospital=new AssignToHospitalPanel(org, enterprise, container, network);
+        container.add("manageNetworkJPanel",assignHospital);
         CardLayout layout=(CardLayout)container.getLayout();
         layout.next(container);
-        logr.info("Manage Patient Button Clicked");
                 
-    }//GEN-LAST:event_managepatientsMouseClicked
+    }//GEN-LAST:event_assignToHospitalMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -119,16 +140,20 @@ public class NgoLoginPage extends javax.swing.JPanel {
         layout.next(container);
     }//GEN-LAST:event_jPanel1MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void managepatients1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepatients1MouseClicked
+        // TODO add your handling code here:        
+        AssignToHospitalPanel assignHospital=new AssignToHospitalPanel(org, enterprise, container, network);
+        container.add("manageNetworkJPanel",assignHospital);
+        CardLayout layout=(CardLayout)container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_managepatients1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel assignToHospital;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel managepatients;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel managepatients1;
     // End of variables declaration//GEN-END:variables
 }
