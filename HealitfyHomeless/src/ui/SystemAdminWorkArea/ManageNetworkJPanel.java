@@ -11,6 +11,7 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
 
 /**
  *
@@ -20,6 +21,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      *
@@ -27,7 +29,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
      */
     public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
-
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.system = system;
 
@@ -165,6 +167,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -182,6 +185,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         }else{
              JOptionPane.showMessageDialog(null, "Please select a row");
         }
+        logr.info("Delete Button Clicked");
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -196,7 +200,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             f.setVisible(true);
         }else{
         JOptionPane.showMessageDialog(null, "Please select a row");
+       
     }
+        logr.info("Update Button Clicked");
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void txtNetworkNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNetworkNameActionPerformed

@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package ui.MedicineProviderWorkArea;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class MedicineProviderAdminPanle extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form MedicineProviderAdminPanle
      */
     public MedicineProviderAdminPanle() {
+        logr.info("LoggingIn");
         initComponents();
     }
 
@@ -52,6 +55,7 @@ public class MedicineProviderAdminPanle extends javax.swing.JPanel {
 
     private void vieworderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vieworderMouseClicked
         // TODO add your handling code here:
+        logr.info("View Order Button Clicked");
     }//GEN-LAST:event_vieworderMouseClicked
 
 

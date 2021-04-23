@@ -14,12 +14,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import ui.NGOAdminWorkArea.TableColors;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class AssignDoctorPanel extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form AssignDoctorPanel
@@ -28,6 +30,7 @@ public class AssignDoctorPanel extends javax.swing.JPanel {
     JPanel container;
     public AssignDoctorPanel(JPanel container ,Organization org) {
         initComponents();
+        logr.info("LoggingIn");
         this.container = container;
         this.org = org;
         populateTable();
@@ -146,6 +149,7 @@ public class AssignDoctorPanel extends javax.swing.JPanel {
         container.remove(this);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -162,6 +166,7 @@ public class AssignDoctorPanel extends javax.swing.JPanel {
                 populateTable();
                 //org.getAssignedPatientDirectort().addPatient(p); 
         }
+        logr.info("Assign Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

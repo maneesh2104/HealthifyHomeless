@@ -12,12 +12,13 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
+import java.util.logging.*;
 /**
  *
  * @author raunak
  */
 public class ManageEnterpriseJPanel extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     private JPanel userProcessContainer;
     private EcoSystem system;
@@ -27,6 +28,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
      */
     public ManageEnterpriseJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.system = system;
 
@@ -163,6 +165,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
 
         populateTable();
+        logr.info("Submit Button Clicked");
 
     }//GEN-LAST:event_submitJButtonActionPerformed
 
@@ -170,6 +173,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
          userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_backJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

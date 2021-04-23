@@ -11,12 +11,14 @@ import Business.Organization.Organization;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import ui.SystemAdminWorkArea.ManageNetworkJPanel;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class NgoLoginPage extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form NgoLoginPage
@@ -31,6 +33,7 @@ public class NgoLoginPage extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.network = network;
         initComponents();
+        logr.info("LoggingIn");
     }
 
     /**
@@ -42,10 +45,16 @@ public class NgoLoginPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         managepatients = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -69,21 +78,33 @@ public class NgoLoginPage extends javax.swing.JPanel {
             .addGroup(managepatientsLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(jLabel2)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         managepatientsLayout.setVerticalGroup(
             managepatientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(managepatientsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(managepatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 220, 240));
+        add(managepatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 220, 240));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 730));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setText("Assign Hospital");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 220, 240));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/VolunteerOPaque.png"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 500));
     }// </editor-fold>//GEN-END:initComponents
 
     private void managepatientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepatientsMouseClicked
@@ -92,6 +113,7 @@ public class NgoLoginPage extends javax.swing.JPanel {
         container.add("manageNetworkJPanel",manageNetworkJPanel);
         CardLayout layout=(CardLayout)container.getLayout();
         layout.next(container);
+        logr.info("Manage Patient Button Clicked");
                 
     }//GEN-LAST:event_managepatientsMouseClicked
 
@@ -103,11 +125,22 @@ public class NgoLoginPage extends javax.swing.JPanel {
         layout.next(container);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        // TODO add your handling code here:
+        AssignToHospitalPanel assignHospital=new AssignToHospitalPanel(org, enterprise, container, network);
+        container.add("manageNetworkJPanel",assignHospital);
+        CardLayout layout=(CardLayout)container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_jPanel1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel managepatients;
     // End of variables declaration//GEN-END:variables
 }

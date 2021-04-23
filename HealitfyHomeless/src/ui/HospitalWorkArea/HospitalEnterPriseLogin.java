@@ -12,12 +12,14 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import ui.NGOAdminWorkArea.AddOrganizationJpanel;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class HospitalEnterPriseLogin extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form HospitalEnterPriseLogin
@@ -29,6 +31,7 @@ public class HospitalEnterPriseLogin extends javax.swing.JPanel {
     EcoSystem business;
     public HospitalEnterPriseLogin(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = organization;
@@ -90,6 +93,7 @@ public class HospitalEnterPriseLogin extends javax.swing.JPanel {
         userProcessContainer.add("addOrganization",addOrganization);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        logr.info("Manage Organisation Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

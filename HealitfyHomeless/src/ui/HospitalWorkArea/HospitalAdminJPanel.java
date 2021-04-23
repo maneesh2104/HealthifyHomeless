@@ -11,12 +11,14 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class HospitalAdminJPanel extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form HospitalAdminJPanel
@@ -29,6 +31,7 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     
     public HospitalAdminJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = organization;
@@ -86,22 +89,26 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 710));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assigntodoctorMouseClicked
+    private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {                                            
         // TODO add your handling code here:
         AddDoctorPanel addDoctor = new AddDoctorPanel(userProcessContainer,organization);
         userProcessContainer.add("addOrganization",addDoctor);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);    
-    }//GEN-LAST:event_jButton2ActionPerformed
+        layout.next(userProcessContainer); 
+        logr.info("Assign Doctor Button Clicked");
+    }                                        
 
 
-    private void adddoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adddoctorMouseClicked
+    private void adddoctorMouseClicked(java.awt.event.MouseEvent evt) {                                       
         // TODO add your handling code here:
         AssignDoctorPanel aDoc = new AssignDoctorPanel(userProcessContainer, organization);
         userProcessContainer.add("addOrganization",aDoc);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);    
-    }//GEN-LAST:event_jButton1ActionPerformed
+        layout.next(userProcessContainer);   
+        logr.info("Add Doctor Button Clicked");
+
+    }                                        
+
 
 
 

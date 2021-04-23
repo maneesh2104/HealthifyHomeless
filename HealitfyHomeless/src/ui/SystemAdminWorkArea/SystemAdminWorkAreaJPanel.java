@@ -14,12 +14,14 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.util.logging.*;
 
 /**
  *
  * @author MyPC1
  */
 public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form SystemAdminWorkAreaJPanel
@@ -28,6 +30,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     EcoSystem ecosystem;
     public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
         initComponents();
+        logr.info("LoggingIn");
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
         //populateTree();
@@ -242,7 +245,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 ManageNetworkJPanel manageNetworkJPanel=new ManageNetworkJPanel(userProcessContainer, ecosystem);
         userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);        
+        layout.next(userProcessContainer);   
+        logr.info("Manage Network Button Clicked");
     }//GEN-LAST:event_managenetwork1MouseClicked
 
     private void manageenterpriseadmin1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageenterpriseadmin1MouseClicked
@@ -250,6 +254,7 @@ ManageNetworkJPanel manageNetworkJPanel=new ManageNetworkJPanel(userProcessConta
         userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        logr.info("Manage Enterprise Admin Button Clicked");
     }//GEN-LAST:event_manageenterpriseadmin1MouseClicked
 
     private void manageenterprise1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageenterprise1MouseClicked
@@ -257,6 +262,8 @@ ManageNetworkJPanel manageNetworkJPanel=new ManageNetworkJPanel(userProcessConta
         userProcessContainer.add("manageEnterpriseJPanel",manageEnterpriseJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        logr.info("Manage Enterprise Button Clicked");
+        
     }//GEN-LAST:event_manageenterprise1MouseClicked
 
 

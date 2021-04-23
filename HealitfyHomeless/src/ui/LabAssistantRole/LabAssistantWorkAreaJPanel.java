@@ -13,6 +13,7 @@ import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
 
 /**
  *
@@ -24,13 +25,14 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     private EcoSystem business;
     private UserAccount userAccount;
     private LabOrganization labOrganization;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
     public LabAssistantWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
-        
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
@@ -151,6 +153,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         populateTable();
+        logr.info("Assign to me  Button Clicked");
         
     }//GEN-LAST:event_assignJButtonActionPerformed
 
@@ -170,11 +173,13 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        logr.info("Process Button Clicked");
         
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();
+        logr.info("Refresh Button Clicked");
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

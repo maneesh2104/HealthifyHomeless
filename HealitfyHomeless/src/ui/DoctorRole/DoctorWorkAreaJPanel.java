@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
 import ui.HospitalWorkArea.ProcessPatientJFrame;
 import ui.NGOAdminWorkArea.AddpatinetJFrame;
 import ui.NGOAdminWorkArea.TableColors;
+import java.util.logging.*;
 
 /**
  *
@@ -32,13 +33,13 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private Organization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
     public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
-        this.setSize(1920, 1080);
-        
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
@@ -55,8 +56,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable.getTableHeader().setDefaultRenderer(new TableColors());
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         
-        model.setRowCount(0);
-        
+        model.setRowCount(0);        
         for (Patinet patient : pd.getPatientList()){
         {
             if(patient.docAssigned != null){
@@ -73,7 +73,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
           }
            
         }
-            
+          
         }
     }
 
@@ -178,12 +178,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             addForm.setVisible(true);
             populateRequestTable();
         }
-
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-
+           logr.info("Refresh Button Clicked");
         populateRequestTable();
         
     }//GEN-LAST:event_refreshTestJButtonActionPerformed

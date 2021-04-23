@@ -7,12 +7,14 @@ package ui.HospitalWorkArea;
 
 import Business.Organization.Organization;
 import Business.Role.DoctorRole;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class AddDoctorFrame extends javax.swing.JFrame {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form AddDoctorFrame
@@ -21,6 +23,7 @@ public class AddDoctorFrame extends javax.swing.JFrame {
     public AddDoctorFrame(Organization org) {
         this.org = org;
         initComponents();
+        logr.info("LoggingIn");
     }
 
     /**
@@ -152,6 +155,7 @@ public class AddDoctorFrame extends javax.swing.JFrame {
         org.getDoctorDirectory().createDoctors(txtName.getText(), txtQali.getText(), txtDep.getText() , txtSpecality.getText(), txtUsername.getText(), txtPassword.getText());
         org.getUserAccountDirectory().createUserAccount(txtUsername.getText(), txtPassword.getText(), null, new DoctorRole());
         this.dispose();
+        logr.info("Add Doctor Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

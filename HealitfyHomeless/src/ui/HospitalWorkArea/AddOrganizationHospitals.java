@@ -21,12 +21,14 @@ import Business.Role.Role;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class AddOrganizationHospitals extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form AddOrganizationJpanel
@@ -41,6 +43,7 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
         this.ecosystem=ecosystem;
         this.enterprise = enterprise;
         initComponents();
+        logr.info("LoggingIn");
         fillComboBox();
         populateTable();
     }
@@ -262,6 +265,7 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
             resetFields();
             JOptionPane.showMessageDialog(null, "Organization is created successfully");
         }
+        logr.info("Create Button Clicked");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -20,6 +20,7 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
 
 /**
  *
@@ -29,13 +30,15 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
 
     /**
      * Creates new form ManageEnterpriseJPanel
      */
     public ManageEnterpriseAdminJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
-
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.system = system;
 
@@ -103,6 +106,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseJTable.setForeground(new java.awt.Color(51, 255, 102));
@@ -151,12 +155,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 251, 136, -1));
 
         submitJButton.setText("Submit");
+        submitJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 426, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 426, 80, 30));
 
         jLabel4.setText("Password");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 332, -1, -1));
@@ -167,15 +172,16 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 329, 134, -1));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 417, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 417, 90, 30));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/design1.png"))); // NOI18N
         jLabel6.setPreferredSize(new java.awt.Dimension(768, 768));
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 690));
     }// </editor-fold>//GEN-END:initComponents
@@ -220,6 +226,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please enter unique username", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         }
+        logr.info("Submit Button Clicked");
         
     }//GEN-LAST:event_submitJButtonActionPerformed
 
@@ -227,6 +234,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
          userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_backJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -8,12 +8,16 @@ import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
+import java.util.logging.*;
+
+
 
 /**
  *
  * @author raunak
  */
 public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     JPanel userProcessContainer;
     LabTestWorkRequest request;
@@ -22,6 +26,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
      */
     public ProcessWorkRequestJPanel(JPanel userProcessContainer, LabTestWorkRequest request) {
         initComponents();
+        logr.info("LoggingIn");
         this.userProcessContainer = userProcessContainer;
         this.request = request;
     }
@@ -78,11 +83,13 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         dwjp.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         request.setTestResult(resultJTextField.getText());
         request.setStatus("Completed");
+        logr.info("Submit Button Clicked");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
