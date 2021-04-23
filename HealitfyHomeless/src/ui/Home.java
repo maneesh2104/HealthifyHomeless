@@ -277,7 +277,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
+                .addGap(76, 76, 76)
                 .addComponent(jButton1)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -413,7 +413,10 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        CardLayout layout=(CardLayout)jPanel6.getLayout();
+        FundsApplicationPanel panel = new  FundsApplicationPanel(system);
+        jPanel6.add("workArea", panel);
+        layout.next(jPanel6);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

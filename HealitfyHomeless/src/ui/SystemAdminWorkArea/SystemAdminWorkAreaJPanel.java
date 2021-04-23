@@ -311,6 +311,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void fundApprovalmanagenetwork1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundApprovalmanagenetwork1MouseClicked
         // TODO add your handling code here:
+        //Funds approval panel click
+        FundsApprovalPage fundsApproval = new FundsApprovalPage(userProcessContainer, ecosystem);
+        userProcessContainer.add("manageEnterpriseAdminJPanel",fundsApproval);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_fundApprovalmanagenetwork1MouseClicked
 
 

@@ -167,9 +167,7 @@ private void initComponents() {
         container.remove(this);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
-               logr.info("Back Button Clicked");
-
-
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_jButton5ActionPerformed
 
                                          
@@ -182,13 +180,25 @@ private void initComponents() {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-             logr.info("Update Button Clicked");   
-             JOptionPane.showMessageDialog(this, "Details Updated");
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+                Doctors p = (Doctors)jTable1.getValueAt(selectedRow, 0);
+                UpdateDoctor updateDoc = new UpdateDoctor(org, p);
+                updateDoc.setLocationRelativeTo(null);
+                updateDoc.setVisible(true);
+
+                //org.getAssignedPatientDirectort().addPatient(p); 
+        } 
+        logr.info("Update Button Clicked");   
              
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-             logr.info("Delete Button Clicked");   
+             
+        logr.info("Delete Button Clicked");   
              JOptionPane.showMessageDialog(this, "Deleted Successfully");
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -215,7 +225,7 @@ private void initComponents() {
         for (Doctors doc : pd.getDoctorList()){
         {
                 Object[] row = new Object[4];
-                row[0] = doc.getName();
+                row[0] = doc;
                 row[1] = doc.getSpecality();
                 row[2] = doc.getUsername();
                 row[3] = doc.getDepartment();

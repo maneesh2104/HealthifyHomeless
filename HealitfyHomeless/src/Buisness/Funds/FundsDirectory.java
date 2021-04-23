@@ -18,15 +18,23 @@ public class FundsDirectory {
         funds = new ArrayList<>();
     }
     
-    public FundsRaisingRequest createNewFundReq(String amount, String email, String ssn, String phone, String name){
+    public FundsRaisingRequest createNewFundReq(double amount, String email, String ssn, String phone, String name){
         FundsRaisingRequest req = new FundsRaisingRequest();
         req.setAmmount(amount);
         req.setEmail(email);
         req.setName(name);
         req.setSsn(ssn);
         req.setPhone(phone);
+        funds.add(req);
         return req;
     }
-    
+
+    public ArrayList<FundsRaisingRequest> getFunds() {
+        return funds;
+    }
+
+    public void setFunds(ArrayList<FundsRaisingRequest> funds) {
+        this.funds = funds;
+    }
     
 }

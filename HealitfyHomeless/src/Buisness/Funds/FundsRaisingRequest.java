@@ -16,6 +16,7 @@ public class FundsRaisingRequest {
     String ssn;
     String email;
     double ammount;
+    public boolean status = false;
 
     public String getName() {
         return name;
@@ -55,6 +56,11 @@ public class FundsRaisingRequest {
 
     public void setAmmount(double ammount) {
         this.ammount = ammount;
+    }
+    
+    @Override
+    public String toString(){
+        return name;
     }
     
 }

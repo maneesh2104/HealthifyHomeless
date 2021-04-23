@@ -5,6 +5,17 @@
  */
 package ui.SystemAdminWorkArea;
 
+import Buisness.Funds.FundsRaisingRequest;
+import Buisness.Hospitals.Doctors;
+import Buisness.Patient.PatientDirectory;
+import Buisness.Patient.Patinet;
+import Business.EcoSystem;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import ui.NGOAdminWorkArea.TableColors;
+
 /**
  *
  * @author maneesh
@@ -14,9 +25,14 @@ public class FundsApprovalPage extends javax.swing.JPanel {
     /**
      * Creates new form FundsApprovalPage
      */
-    public FundsApprovalPage() {
+    EcoSystem ecosystem;
+    JPanel userProcessContainer;
+    public FundsApprovalPage(JPanel userProcessContainer,EcoSystem ecosystem) {
+        this.userProcessContainer = userProcessContainer;
+        this.ecosystem = ecosystem;
         initComponents();
         populateTable();
+        totalAmmountLbl.setText(String.valueOf(ecosystem.totalFunds));
     }
 
     /**
@@ -34,22 +50,23 @@ public class FundsApprovalPage extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         totalAmmountLbl = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         jLabel1.setText("Funds Approval Page");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "SSN", "Phone", "Ammount"
+                "Name", "Email", "SSN", "Phone", "Ammount", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -63,6 +80,7 @@ public class FundsApprovalPage extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
         }
 
         jButton1.setText("Approve funds");
@@ -76,6 +94,13 @@ public class FundsApprovalPage extends javax.swing.JPanel {
 
         totalAmmountLbl.setText("0");
 
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,7 +111,9 @@ public class FundsApprovalPage extends javax.swing.JPanel {
                         .addGap(44, 44, 44)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
+                        .addContainerGap()
+                        .addComponent(jButton2)
+                        .addGap(54, 54, 54)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
@@ -101,9 +128,11 @@ public class FundsApprovalPage extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton2))
+                .addGap(8, 8, 8)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -117,11 +146,35 @@ public class FundsApprovalPage extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //Funds approval status
+        
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+                FundsRaisingRequest p = (FundsRaisingRequest)jTable1.getValueAt(selectedRow, 0);
+                p.status = true;
+                ecosystem.totalFunds = ecosystem.totalFunds + p.getAmmount();
+                populateTable();
+                totalAmmountLbl.setText(String.valueOf(ecosystem.totalFunds));
+                //org.getAssignedPatientDirectort().addPatient(p); 
+                JOptionPane.showMessageDialog(this, "Fund Approved");
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -131,6 +184,27 @@ public class FundsApprovalPage extends javax.swing.JPanel {
 
     private void populateTable() {
         
+        
+        jTable1.getTableHeader().setDefaultRenderer(new TableColors());
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        
+        model.setRowCount(0);
+        
+        for (FundsRaisingRequest fund : ecosystem.funds.getFunds()){
+        {
+//            if(fund.status == false){
+                Object[] row = new Object[6];
+                row[0] = fund;
+                row[1] = fund.getEmail();
+                row[2] = fund.getSsn();
+                row[3] = fund.getPhone();
+                row[4] = fund.getAmmount();
+                row[5] = fund.status;
+                model.addRow(row);
+//            }
+        }
+            
+        }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

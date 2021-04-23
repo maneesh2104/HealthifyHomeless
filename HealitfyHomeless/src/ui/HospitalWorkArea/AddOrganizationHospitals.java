@@ -326,13 +326,13 @@ if(txtPassword.getText().isEmpty()){
         
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
         {
-             if(organization instanceof NgoOrganization){
+//             if(organization instanceof NgoOrganization){
                 Object[] row = new Object[3];
                 row[0] = organization.getOrganizationID();
                 row[1] = organization.getName();
                 row[2] = organization.getAddress();
                 model.addRow(row);
-             }
+//             }
         }
             
         }

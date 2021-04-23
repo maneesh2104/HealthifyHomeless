@@ -5,7 +5,9 @@
  */
 package ui;
 
+import Buisness.Funds.FundsDirectory;
 import Buisness.Funds.FundsRaisingRequest;
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import javax.swing.JOptionPane;
 
@@ -19,6 +21,8 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
      * Creates new form FundsApplicationPanel
      */
     EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+
     public FundsApplicationPanel(EcoSystem system) {
         initComponents();
         this.system = system;
@@ -128,10 +132,10 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
                         .addGap(146, 146, 146)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(108, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(181, 181, 181)
                 .addComponent(jButton1)
-                .addGap(170, 170, 170))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,8 +211,13 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
             return;
        }
        
-        system.funds.createNewFundReq(txtAmmount.getText(), txtEmail.getText(), txtSssn.getText(), txtPhone.getText(), txtName.getText());
-        JOptionPane.showMessageDialog(this, "Funds request Sucessfully sent");
+       if(system.funds == null){
+           system.funds = new FundsDirectory();
+       }
+       
+        this.system.funds.createNewFundReq(Double.parseDouble(txtAmmount.getText()), txtEmail.getText(), txtSssn.getText(), txtPhone.getText(), txtName.getText());
+        dB4OUtil.storeSystem(system);
+        JOptionPane.showMessageDialog(this, "Funds request sucessfully sent");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
