@@ -51,6 +51,7 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -65,7 +66,10 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         typeCombo = new javax.swing.JComboBox();
-        jLabel7 = new javax.swing.JLabel();
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        jLabel7.setPreferredSize(new java.awt.Dimension(768, 768));
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -144,11 +148,6 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
             }
         });
         add(typeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 328, 171, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        jLabel7.setPreferredSize(new java.awt.Dimension(768, 768));
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed

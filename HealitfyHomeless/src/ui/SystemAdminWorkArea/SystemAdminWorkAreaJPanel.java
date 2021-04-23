@@ -93,6 +93,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        fundApproval = new javax.swing.JPanel();
+        lblFundAprroval = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -143,11 +146,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(800, 800));
         setPreferredSize(new java.awt.Dimension(1000, 800));
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 800));
+        jPanel2.setPreferredSize(new java.awt.Dimension(440, 300));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         managenetwork4.setBackground(new java.awt.Color(255, 255, 255));
         managenetwork4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        managenetwork4.setPreferredSize(new java.awt.Dimension(440, 300));
         managenetwork4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managenetwork1MouseClicked(evt);
@@ -157,34 +161,34 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("PT Sans Narrow", 1, 18)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("MANAGE NETWORK");
+        jLabel11.setPreferredSize(new java.awt.Dimension(500, 300));
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/manage_networkf.png"))); // NOI18N
+        jLabel12.setPreferredSize(new java.awt.Dimension(500, 300));
 
         javax.swing.GroupLayout managenetwork4Layout = new javax.swing.GroupLayout(managenetwork4);
         managenetwork4.setLayout(managenetwork4Layout);
         managenetwork4Layout.setHorizontalGroup(
             managenetwork4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, managenetwork4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         managenetwork4Layout.setVerticalGroup(
             managenetwork4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, managenetwork4Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addGap(22, 22, 22))
+                .addContainerGap()
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addGap(75, 75, 75))
         );
 
-        jPanel2.add(managenetwork4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, 190, 260));
+        jPanel2.add(managenetwork4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, 310, 210));
 
         manageenterprise1.setBackground(new java.awt.Color(255, 255, 255));
         manageenterprise1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        manageenterprise1.setPreferredSize(new java.awt.Dimension(440, 300));
         manageenterprise1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 manageenterprise1MouseClicked(evt);
@@ -195,16 +199,18 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("PT Sans Narrow", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("MANAGE ENTERPRISE");
-        manageenterprise1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 200, -1));
+        manageenterprise1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 310, -1));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/manage_enterprisef.png"))); // NOI18N
-        manageenterprise1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 60, 60));
+        jLabel1.setPreferredSize(new java.awt.Dimension(500, 300));
+        manageenterprise1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 310, 120));
 
-        jPanel2.add(manageenterprise1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 200, 260));
+        jPanel2.add(manageenterprise1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 310, 210));
 
         manageenterpriseadmin1.setBackground(new java.awt.Color(255, 255, 255));
         manageenterpriseadmin1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        manageenterpriseadmin1.setPreferredSize(new java.awt.Dimension(440, 300));
         manageenterpriseadmin1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 manageenterpriseadmin1MouseClicked(evt);
@@ -215,21 +221,60 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("PT Sans Narrow", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("MANAGE ENTERPRIZE ADMIN");
-        manageenterpriseadmin1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 200, -1));
+        manageenterpriseadmin1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 310, -1));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/manage_adminf.png"))); // NOI18N
-        manageenterpriseadmin1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 60, 60));
+        jLabel4.setPreferredSize(new java.awt.Dimension(500, 300));
+        manageenterpriseadmin1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 310, 100));
 
-        jPanel2.add(manageenterpriseadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 200, 260));
+        jPanel2.add(manageenterpriseadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, 310, 210));
 
         jLabel13.setFont(jLabel13.getFont().deriveFont(jLabel13.getFont().getStyle() | java.awt.Font.BOLD, jLabel13.getFont().getSize()+13));
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("SYSTEM ADMIN PAGE ");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
 
+        fundApproval.setBackground(new java.awt.Color(255, 255, 255));
+        fundApproval.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        fundApproval.setPreferredSize(new java.awt.Dimension(440, 300));
+        fundApproval.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fundApprovalmanagenetwork1MouseClicked(evt);
+            }
+        });
+
+        lblFundAprroval.setFont(new java.awt.Font("PT Sans Narrow", 1, 18)); // NOI18N
+        lblFundAprroval.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFundAprroval.setText("FUND APPROVAL");
+        lblFundAprroval.setPreferredSize(new java.awt.Dimension(500, 300));
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/fund_app.png"))); // NOI18N
+        jLabel16.setPreferredSize(new java.awt.Dimension(500, 300));
+
+        javax.swing.GroupLayout fundApprovalLayout = new javax.swing.GroupLayout(fundApproval);
+        fundApproval.setLayout(fundApprovalLayout);
+        fundApprovalLayout.setHorizontalGroup(
+            fundApprovalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblFundAprroval, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+        fundApprovalLayout.setVerticalGroup(
+            fundApprovalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fundApprovalLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(lblFundAprroval, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addGap(71, 71, 71))
+        );
+
+        jPanel2.add(fundApproval, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 310, 210));
+
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/AdminBG.jpg"))); // NOI18N
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 800));
+        jLabel14.setText("jLabel14");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 1000, 800));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -264,14 +309,20 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageenterpriseadmin1MouseClicked
 
+    private void fundApprovalmanagenetwork1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundApprovalmanagenetwork1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fundApprovalmanagenetwork1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel fundApproval;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -285,6 +336,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JLabel lblFundAprroval;
     private javax.swing.JPanel manageenterprise1;
     private javax.swing.JPanel manageenterpriseadmin1;
     private javax.swing.JPanel managenetwork1;

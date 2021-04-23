@@ -63,7 +63,7 @@ public class NgoLoginPage extends javax.swing.JPanel {
             .addGroup(managepatientsLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(jLabel2)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         managepatientsLayout.setVerticalGroup(
             managepatientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
