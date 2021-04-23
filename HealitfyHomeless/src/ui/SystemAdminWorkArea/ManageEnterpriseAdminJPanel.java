@@ -11,7 +11,6 @@ import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.Role.HomelessProviderAdmin;
 import Business.Role.HospitalAdminRole;
-import Business.Role.HospitalEnterpriseAdmin;
 import Business.Role.NgoAdminRole;
 import Business.Role.PharamcyAdminRole;
 import Business.UserAccount.UserAccount;
@@ -177,6 +176,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         submitJButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         submitJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         submitJButton.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        submitJButton.setOpaque(false);
         submitJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,7 +219,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel6.setText("MANAGE ENTERPRISE ADMIN");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1000, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/AdminBG.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/AdminBG2.jpg"))); // NOI18N
         jLabel7.setPreferredSize(new java.awt.Dimension(1000, 800));
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 800));
     }// </editor-fold>//GEN-END:initComponents
@@ -249,7 +249,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             if (system.checkIfUserIsUnique(username)) {
                 UserAccount account;
                 if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Hospital) {
-                    account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalEnterpriseAdmin());
+                    account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole());
                 } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.HomelessDataProviders) {
                     account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HomelessProviderAdmin());
                 }

@@ -54,6 +54,7 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -69,6 +70,10 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         typeCombo = new javax.swing.JComboBox();
         txtPassword = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
+        jLabel8.setText("jLabel7");
+        jLabel8.setPreferredSize(new java.awt.Dimension(768, 768));
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,8 +155,6 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
             }
         });
         add(typeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 171, -1));
-
-        txtPassword.setText("jPasswordField1");
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 160, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/woring lady.jpg"))); // NOI18N
@@ -246,6 +249,7 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtAddress;
