@@ -99,7 +99,11 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        GenerateBillPanel genPanle = new GenerateBillPanel(userProcessContainer, organization);
+        userProcessContainer.add("addOrganization",genPanle);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer); 
+        logr.info("GenerateBill Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {                                            

@@ -7,6 +7,7 @@ package ui.NGOAdminWorkArea;
 
 import Buisness.Patient.PatientDirectory;
 import Buisness.Patient.Patinet;
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.HospitalOrganization;
@@ -22,7 +23,7 @@ import java.util.logging.*;
  *
  * @author maneesh
  */
-public class AssignToHospitalPanel extends javax.swing.JPanel {
+public class PayPatientBill extends javax.swing.JPanel {
 
     private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -33,16 +34,19 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     JPanel container;
     Network network;
-    public AssignToHospitalPanel(Organization org, Enterprise enterprise, JPanel container, Network network) {
+    EcoSystem system;
+    public PayPatientBill(Organization org, Enterprise enterprise, JPanel container, Network network,  EcoSystem system) {
         initComponents();
         logr.info("LoggingIn");
         this.org = org;
         this.enterprise = enterprise;
         this.network = network;
         this.container = container;
+        this.system = system;
         populateTable();
         populateTable1();
         fillComboBox();
+        jLabel4.setText(String.valueOf(system.totalFunds));
     }
     
     
@@ -60,12 +64,10 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -77,18 +79,18 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Assign to hospital Details");
+        jLabel1.setText("Pay Patient Bills");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1000, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Age", "Symptoms", "Disease"
+                "Name", "Age", "Symptoms", "Disease", "BillAmmount", "status"
             }
         ));
         jTable1.setRowHeight(30);
@@ -100,21 +102,17 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         jLabel2.setText("**Select a row before assigning to hospital");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 310, 40));
-
         jButton1.setBackground(new java.awt.Color(51, 204, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 153));
-        jButton1.setText("Assign to Hospital");
+        jButton1.setText("Pay Bills");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 310, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 310, 40));
 
         jButton2.setText("<<Back");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -125,31 +123,16 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Name", "Age", "Symptoms", "Disease", "Hospital"
-            }
-        ));
-        jTable2.setRowHeight(30);
-        jScrollPane2.setViewportView(jTable2);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 660, 188));
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Assign to Hospital");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 130, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setText("Assigned Patients");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 130, 40));
+        jLabel6.setBackground(new java.awt.Color(51, 102, 255));
+        jLabel6.setForeground(new java.awt.Color(153, 153, 255));
+        jLabel6.setText("Available Funds");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 90, 20));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/assign_to_hospital.jpg"))); // NOI18N
@@ -172,12 +155,11 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-                Organization orga = (Organization) jComboBox1.getSelectedItem();
-                Patinet p = (Patinet)jTable1.getValueAt(selectedRow, 0);
-                p.isHosAssigned = true;
-                p.hospitalAssigned = orga;
-                orga.getPatientDirectory().addPatient(p); 
-                populateTable1();
+            Patinet p = (Patinet)jTable1.getValueAt(selectedRow, 0);
+            p.billStatus = true;
+            system.totalFunds = system.totalFunds - p.billAmmount;
+            jLabel4.setText(String.valueOf(system.totalFunds));
+            populateTable();
         }
         logr.info("Assign to Hospital Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -186,16 +168,14 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
@@ -209,12 +189,14 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
         
         for (Patinet patient : pd.getPatientList()){
         {
-            if(patient.isHosAssigned == false){
-                Object[] row = new Object[4];
+            if(patient.billStatus == false){
+                Object[] row = new Object[6];
                 row[0] = patient;
                 row[1] = patient.getAge();
                 row[2] = patient.getSymptoms();
                 row[3] = patient.getDisease();
+                row[4] = patient.billAmmount;
+                row[5] = patient.billStatus;
                 model.addRow(row);
             }
 
@@ -225,52 +207,52 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
     }
     
      private void populateTable1() {
-        PatientDirectory pd = org.getPatientDirectory();
-        pd.getPatientList();
-        
-        jTable2.getTableHeader().setDefaultRenderer(new TableColors());
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        
-        model.setRowCount(0);
-        
-        for (Patinet patient : pd.getPatientList()){
-        {
-            if(patient.isHosAssigned == true){
-                Object[] row = new Object[5];
-                row[0] = patient;
-                row[1] = patient.getAge();
-                row[2] = patient.getSymptoms();
-                row[3] = patient.getDisease();
-                row[4] = patient.hospitalAssigned;
-                model.addRow(row);
-            }
-        }
-            
-        }
+//        PatientDirectory pd = org.getPatientDirectory();
+//        pd.getPatientList();
+//        
+//        jTable2.getTableHeader().setDefaultRenderer(new TableColors());
+//        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+//        
+//        model.setRowCount(0);
+//        
+//        for (Patinet patient : pd.getPatientList()){
+//        {
+//            if(patient.isHosAssigned == true){
+//                Object[] row = new Object[5];
+//                row[0] = patient;
+//                row[1] = patient.getAge();
+//                row[2] = patient.getSymptoms();
+//                row[3] = patient.getDisease();
+//                row[4] = patient.hospitalAssigned;
+//                model.addRow(row);
+//            }
+//        }
+//            
+//        }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void fillComboBox() {
-        ArrayList<Enterprise> enterpriseList = network.getEnterpriseDirectory().getEnterpriseList();
-        jComboBox1.removeAllItems();
-        for(Enterprise ent:enterpriseList){
-            if(ent.getEnterpriseType() == Enterprise.EnterpriseType.Hospital){
-                
-                for(Organization org: ent.getOrganizationDirectory().getOrganizationList()){
-                    if(org instanceof HospitalOrganization){
-                        jComboBox1.addItem(org);
-                    }
-                }
-            }
-            
-            System.out.println(ent.getEnterpriseType());
-            System.out.println(Enterprise.EnterpriseType.Hospital);
-
-        }
-        ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
-        for(Organization org: orgList){
-            System.out.println(org.getName());
-        }
+//        ArrayList<Enterprise> enterpriseList = network.getEnterpriseDirectory().getEnterpriseList();
+//        jComboBox1.removeAllItems();
+//        for(Enterprise ent:enterpriseList){
+//            if(ent.getEnterpriseType() == Enterprise.EnterpriseType.Hospital){
+//                
+//                for(Organization org: ent.getOrganizationDirectory().getOrganizationList()){
+//                    if(org instanceof HospitalOrganization){
+//                        jComboBox1.addItem(org);
+//                    }
+//                }
+//            }
+//            
+//            System.out.println(ent.getEnterpriseType());
+//            System.out.println(Enterprise.EnterpriseType.Hospital);
+//
+//        }
+//        ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
+//        for(Organization org: orgList){
+//            System.out.println(org.getName());
+//        }
     }
     
     

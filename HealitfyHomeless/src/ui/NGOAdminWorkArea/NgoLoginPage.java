@@ -5,6 +5,7 @@
  */
 package ui.NGOAdminWorkArea;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
@@ -27,11 +28,13 @@ public class NgoLoginPage extends javax.swing.JPanel {
     Organization org;
     Enterprise enterprise;
     Network network;
-    public NgoLoginPage(JPanel container, Organization org, Enterprise enterprise, Network network) {
+     EcoSystem business;
+    public NgoLoginPage(JPanel container, Organization org, Enterprise enterprise, Network network,  EcoSystem business) {
         this.container = container;
         this.org = org;
         this.enterprise = enterprise;
         this.network = network;
+        this.business = business;
         initComponents();
         logr.info("LoggingIn");
     }
@@ -50,6 +53,7 @@ public class NgoLoginPage extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         managepatients1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1000, 800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,6 +117,14 @@ public class NgoLoginPage extends javax.swing.JPanel {
         );
 
         add(managepatients1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 220, 240));
+
+        jButton1.setText("Pay Bills");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignToHospitalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assignToHospitalMouseClicked
@@ -148,9 +160,18 @@ public class NgoLoginPage extends javax.swing.JPanel {
         layout.next(container);
     }//GEN-LAST:event_managepatients1MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        PayPatientBill assignHospital=new PayPatientBill(org, enterprise, container, network, business);
+        container.add("manageNetworkJPanel",assignHospital);
+        CardLayout layout=(CardLayout)container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel assignToHospital;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
