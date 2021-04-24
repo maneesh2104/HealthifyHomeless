@@ -20,7 +20,7 @@ public class FundsDirectory {
     
     public FundsRaisingRequest createNewFundReq(double amount, String email, String ssn, String phone, String name){
         FundsRaisingRequest req = new FundsRaisingRequest();
-        //req.setAmmount(amount);
+        req.setAmmount(amount);
         req.setEmail(email);
         req.setName(name);
         req.setSsn(ssn);

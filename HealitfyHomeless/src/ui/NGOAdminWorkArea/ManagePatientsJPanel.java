@@ -166,6 +166,9 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         else{
             Patinet p= (Patinet) jTable1.getValueAt(selectedRow, 0);
             org.getPatientDirectory().deletePatient(p);
+            JOptionPane.showMessageDialog(this,
+                "Patinet deleted");
+            populateTable();
         }
         logr.info("Delete Button Clicked");
     }//GEN-LAST:event_jButton3ActionPerformed

@@ -203,6 +203,7 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
         this.system.funds.createNewFundReq(Double.parseDouble(txtAmmount.getText()), txtEmail.getText(), txtSssn.getText(), txtPhone.getText(), txtName.getText());
         dB4OUtil.storeSystem(system);
         JOptionPane.showMessageDialog(this, "Funds request sucessfully sent");
+        clearFields();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -222,4 +223,13 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtSssn;
     // End of variables declaration//GEN-END:variables
+
+    private void clearFields() {
+        txtAmmount.setText("");
+        txtPhone.setText("");
+        txtSssn.setText("");
+        txtEmail.setText("");
+        txtAmmount.setText("");
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
