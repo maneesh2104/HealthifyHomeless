@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author maneesh
  */
 public class MedicineDirectory {
-    ArrayList<Medicine> medicineList;
+    public ArrayList<Medicine> medicineList;
     
     public MedicineDirectory(){
         medicineList = new ArrayList<>();

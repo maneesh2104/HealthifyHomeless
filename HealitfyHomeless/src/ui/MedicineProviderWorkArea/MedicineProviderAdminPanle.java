@@ -8,6 +8,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import java.util.logging.*;
 import javax.swing.JPanel;
 
@@ -33,7 +34,7 @@ public class MedicineProviderAdminPanle extends javax.swing.JPanel {
         this.organization = organization;
         this.enterprise = enterprise;
         this.business = business;
-        logr.info("LoggingIn");
+        logr.info("Medicine provider panel loaded");
         initComponents();
     }
 
@@ -104,7 +105,10 @@ public class MedicineProviderAdminPanle extends javax.swing.JPanel {
 
     private void vieworderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vieworderMouseClicked
         // TODO add your handling code here:
-        ManageInventoryJPanle manage = new ManageInventoryJPanle();
+        ManageInventoryJPanle manage = new ManageInventoryJPanle(enterprise);
+        userProcessContainer.add("addOrganization",manage);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         logr.info("View Order Button Clicked");
     }//GEN-LAST:event_vieworderMouseClicked
 
