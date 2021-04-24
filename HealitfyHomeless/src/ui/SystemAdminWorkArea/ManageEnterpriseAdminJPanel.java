@@ -11,6 +11,7 @@ import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.Role.HomelessProviderAdmin;
 import Business.Role.HospitalAdminRole;
+import Business.Role.HospitalEnterpriseAdmin;
 import Business.Role.NgoAdminRole;
 import Business.Role.PharamcyAdminRole;
 import Business.UserAccount.UserAccount;
@@ -249,7 +250,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             if (system.checkIfUserIsUnique(username)) {
                 UserAccount account;
                 if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Hospital) {
-                    account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole());
+                    account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalEnterpriseAdmin());
                 } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.HomelessDataProviders) {
                     account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HomelessProviderAdmin());
                 }

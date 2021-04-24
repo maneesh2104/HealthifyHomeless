@@ -244,7 +244,6 @@ public class AssignToHospitalPanel extends javax.swing.JPanel {
                 row[4] = patient.hospitalAssigned;
                 model.addRow(row);
             }
-
         }
             
         }

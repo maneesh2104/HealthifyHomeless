@@ -4,7 +4,13 @@
  * and open the template in the editor.
  */
 package ui.MedicineProviderWorkArea;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import java.util.logging.*;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,8 +22,19 @@ public class MedicineProviderAdminPanle extends javax.swing.JPanel {
     /**
      * Creates new form MedicineProviderAdminPanle
      */
-    public MedicineProviderAdminPanle() {
-        logr.info("LoggingIn");
+    JPanel userProcessContainer;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    EcoSystem business;
+    
+    public MedicineProviderAdminPanle(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.business = business;
+        logr.info("Medicine provider panel loaded");
         initComponents();
     }
 
@@ -57,7 +74,7 @@ public class MedicineProviderAdminPanle extends javax.swing.JPanel {
         jLabel2.setFont(jLabel2.getFont().deriveFont(jLabel2.getFont().getStyle() | java.awt.Font.BOLD, jLabel2.getFont().getSize()+7));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("VIEW ORDER");
+        jLabel2.setText("Manage Inventory");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/MedicineProviderWorkArea/view_order.png"))); // NOI18N
@@ -88,6 +105,10 @@ public class MedicineProviderAdminPanle extends javax.swing.JPanel {
 
     private void vieworderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vieworderMouseClicked
         // TODO add your handling code here:
+        ManageInventoryJPanle manage = new ManageInventoryJPanle(enterprise);
+        userProcessContainer.add("addOrganization",manage);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         logr.info("View Order Button Clicked");
     }//GEN-LAST:event_vieworderMouseClicked
 

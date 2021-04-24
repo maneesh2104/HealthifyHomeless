@@ -35,6 +35,8 @@ public class Patinet {
     public Doctors docAssigned;
     public boolean doctorAssigned = false;
     public String docComments = "";
+    public double billAmmount = 0;
+    public boolean billStatus = false;
     
     public String getFullname() {
         return fullname;

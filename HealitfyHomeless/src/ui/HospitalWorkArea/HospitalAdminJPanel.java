@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import java.util.logging.*;
 
@@ -48,67 +49,108 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         adddoctor = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        assigntodoctor = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        generateBills = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        assigntodoctor = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/hospitalimage.png"))); // NOI18N
-
+        setPreferredSize(new java.awt.Dimension(1000, 453));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome Hospital Admin ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 11, -1, 33));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 40, 1000, 33));
 
+        adddoctor.setBackground(new java.awt.Color(0, 102, 153));
         adddoctor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         adddoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 adddoctorMouseClicked(evt);
             }
         });
+        adddoctor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ADD DOCTOR");
-        adddoctor.add(jLabel2);
+        adddoctor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 7, -1, -1));
 
-        add(adddoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 180, 240));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/add_doc_pj.png"))); // NOI18N
+        adddoctor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 114, 180, 60));
 
+        add(adddoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 180, 240));
+
+        generateBills.setBackground(new java.awt.Color(0, 102, 153));
+        generateBills.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        generateBills.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                generateBillsMouseClicked(evt);
+            }
+        });
+        generateBills.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("GENERATE BILLS");
+        generateBills.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 7, -1, -1));
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/gen_bills_pj.png"))); // NOI18N
+        generateBills.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 114, 180, 70));
+
+        add(generateBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 180, 240));
+
+        assigntodoctor.setBackground(new java.awt.Color(0, 102, 153));
         assigntodoctor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         assigntodoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 assigntodoctorMouseClicked(evt);
             }
         });
+        assigntodoctor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("ASSIGN TO DOCTOR");
-        assigntodoctor.add(jLabel3);
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("ASSIGN TO DOCTOR");
+        assigntodoctor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 7, -1, -1));
 
-        add(assigntodoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 180, 240));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/assg_to_doc_pj.png"))); // NOI18N
+        assigntodoctor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 70));
 
-        jButton1.setText("Generat Bills");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, -1));
+        add(assigntodoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 180, 240));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/wel_hosp_admin.jpg"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 800));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {                                            
+    private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assigntodoctorMouseClicked
         // TODO add your handling code here:
         AssignDoctorPanel aDoc = new AssignDoctorPanel(userProcessContainer, organization);
         userProcessContainer.add("addOrganization",aDoc);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer); 
         logr.info("Assign Doctor Button Clicked");
+    }//GEN-LAST:event_assigntodoctorMouseClicked
+
+    private void generateBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generateBillsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generateBillsMouseClicked
+
+    private void assigntodoctorMouse1Clicked(java.awt.event.MouseEvent evt) {                                            
+        // TODO add your handling code here:
+        
     }                                        
 
         
@@ -129,10 +171,14 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adddoctor;
     private javax.swing.JPanel assigntodoctor;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel generateBills;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
