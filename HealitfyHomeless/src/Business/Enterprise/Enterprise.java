@@ -6,6 +6,7 @@
 package Business.Enterprise;
 
 import Buisness.Patient.PatientDirectory;
+import Business.MedicineProviders.MedicineDirectory;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 
@@ -18,6 +19,7 @@ public abstract class Enterprise extends Organization{
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
     private PatientDirectory patientList;
+    public MedicineDirectory medList;
 
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
@@ -60,6 +62,14 @@ public abstract class Enterprise extends Organization{
 
     public void setPatientList(PatientDirectory patientList) {
         this.patientList = patientList;
+    }
+
+    public MedicineDirectory getMedList() {
+        return medList;
+    }
+
+    public void setMedList(MedicineDirectory medList) {
+        this.medList = medList;
     }
     
 }

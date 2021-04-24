@@ -38,5 +38,23 @@ public class DoctorDirectoy {
         return doc;
     }
     
+    public void deleteDoctor(Doctors doc){
+        doctorList.remove(doc);
+    }
+    
+    public Doctors updateDoctor(String userName, String depString, String name, String quali, String specality){
+        for(Doctors doc: doctorList){
+            if(doc.getUsername().equalsIgnoreCase(userName)){
+                doc.setDepartment(depString);
+                doc.setName(userName);
+                doc.setQuali(quali);
+                doc.setSpecality(specality);
+                return doc;
+            }
+        }
+        return null;
+        
+    }
+    
     
 }

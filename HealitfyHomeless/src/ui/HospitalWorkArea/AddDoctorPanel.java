@@ -14,12 +14,16 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import ui.NGOAdminWorkArea.TableColors;
+import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author maneesh
  */
 public class AddDoctorPanel extends javax.swing.JPanel {
+
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form AddDoctorPanel
@@ -30,6 +34,7 @@ public class AddDoctorPanel extends javax.swing.JPanel {
         this.org = org;
         this.container = container;
         initComponents();
+        logr.info("LoggingIn");
         populatTable();
     }
 
@@ -45,14 +50,21 @@ public class AddDoctorPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setText("Add Doctor Panel");
+        setPreferredSize(new java.awt.Dimension(1000, 800));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(jLabel1.getFont().deriveFont(jLabel1.getFont().getStyle() | java.awt.Font.BOLD, jLabel1.getFont().getSize()+13));
+        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Manage Doctors");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 70, 1000, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -65,78 +77,70 @@ public class AddDoctorPanel extends javax.swing.JPanel {
                 "Name", "Specality", "user name", "Department"
             }
         ));
+        jTable1.setRowHeight(30);
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jButton1.setText("Update");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 180, 640, 190));
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(51, 204, 255));
+        btnUpdate.setFont(btnUpdate.getFont().deriveFont(btnUpdate.getFont().getStyle() | java.awt.Font.BOLD, btnUpdate.getFont().getSize()+1));
+        btnUpdate.setForeground(new java.awt.Color(0, 102, 153));
+        btnUpdate.setText("Update");
+        btnUpdate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 300, 40));
+
+        jButton2.setBackground(new java.awt.Color(51, 204, 255));
+        jButton2.setFont(jButton2.getFont().deriveFont(jButton2.getFont().getStyle() | java.awt.Font.BOLD, jButton2.getFont().getSize()+1));
+        jButton2.setForeground(new java.awt.Color(0, 102, 153));
         jButton2.setText("Add new");
+        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 300, 40));
 
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(51, 204, 255));
+        jButton3.setFont(jButton3.getFont().deriveFont(jButton3.getFont().getStyle() | java.awt.Font.BOLD, jButton3.getFont().getSize()+1));
+        jButton3.setForeground(new java.awt.Color(0, 102, 153));
         jButton3.setText("Delete");
+        jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 300, 40));
 
+        jButton4.setBackground(new java.awt.Color(51, 204, 255));
+        jButton4.setFont(jButton4.getFont().deriveFont(jButton4.getFont().getStyle() | java.awt.Font.BOLD, jButton4.getFont().getSize()+1));
+        jButton4.setForeground(new java.awt.Color(0, 102, 153));
         jButton4.setText("Refresh");
+        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, 300, 40));
 
-        jButton5.setText("Back");
+        jButton5.setText("<<Back");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 80, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jButton1)
-                .addGap(32, 32, 32)
-                .addComponent(jButton2)
-                .addGap(26, 26, 26)
-                .addComponent(jButton3)
-                .addGap(23, 23, 23))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton5)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33)
-                .addComponent(jButton4)
-                .addGap(26, 26, 26))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/hospitals_bg.jpg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1010, 800));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -144,6 +148,7 @@ public class AddDoctorPanel extends javax.swing.JPanel {
          AddDoctorFrame addForm = new AddDoctorFrame(org);
          addForm.setLocationRelativeTo(null);
          addForm.setVisible(true);
+         logr.info("Add New Button Clicked");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -151,22 +156,54 @@ public class AddDoctorPanel extends javax.swing.JPanel {
         container.remove(this);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
-
+        logr.info("Back Button Clicked");
     }//GEN-LAST:event_jButton5ActionPerformed
 
+                                         
+
+                                           
+
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+           logr.info("Refresh Button Clicked");        
         populatTable();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            Doctors p = (Doctors)jTable1.getValueAt(selectedRow, 0);
+            UpdateDoctor updateDoc = new UpdateDoctor(org, p);
+            updateDoc.setLocationRelativeTo(null);
+            updateDoc.setVisible(true);
+        } 
+        logr.info("Update Button Clicked"); 
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            Doctors p = (Doctors)jTable1.getValueAt(selectedRow, 0);
+            org.getDoctorDirectory().deleteDoctor(p);
+        }
+        logr.info("Delete Button Clicked");   
+        JOptionPane.showMessageDialog(this, "Deleted Successfully");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
@@ -182,7 +219,7 @@ public class AddDoctorPanel extends javax.swing.JPanel {
         for (Doctors doc : pd.getDoctorList()){
         {
                 Object[] row = new Object[4];
-                row[0] = doc.getName();
+                row[0] = doc;
                 row[1] = doc.getSpecality();
                 row[2] = doc.getUsername();
                 row[3] = doc.getDepartment();

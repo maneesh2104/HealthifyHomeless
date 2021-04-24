@@ -18,15 +18,18 @@ import Business.Role.LabAdminRole;
 import Business.Role.NgoAdminRole;
 import Business.Role.OverNightShelterAdmin;
 import Business.Role.Role;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class AddOrganizationHospitals extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form AddOrganizationJpanel
@@ -41,6 +44,7 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
         this.ecosystem=ecosystem;
         this.enterprise = enterprise;
         initComponents();
+        logr.info("LoggingIn");
         fillComboBox();
         populateTable();
     }
@@ -64,12 +68,21 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         typeCombo = new javax.swing.JComboBox();
+        txtPassword = new javax.swing.JPasswordField();
+        btnbackOM = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1000, 800));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(jLabel1.getFont().deriveFont(jLabel1.getFont().getStyle() | java.awt.Font.BOLD, jLabel1.getFont().getSize()+13));
+        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Organization Management");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1000, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,129 +95,100 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
                 "id", "Name", "Address"
             }
         ));
+        jTable1.setRowHeight(30);
+        jTable1.setUpdateSelectionOnSort(false);
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel2.setText("Name");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 560, 180));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Name");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
+
+        txtName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 230, 30));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Address");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
 
+        txtAddress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
             }
         });
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 560, 30));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("User name");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, -1, -1));
 
+        txtUserName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserNameActionPerformed(evt);
             }
         });
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 230, 30));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Password");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, -1, -1));
 
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
-
+        jButton1.setBackground(new java.awt.Color(51, 204, 255));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 102, 153));
         jButton1.setText("Create");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 600, 560, 40));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Type");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, -1, -1));
 
+        typeCombo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         typeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeComboActionPerformed(evt);
             }
         });
+        add(typeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 230, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(33, 33, 33)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtAddress)
-                                    .addComponent(typeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(33, 33, 33)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(jButton1)))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(typeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
+        txtPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 230, 30));
+
+        btnbackOM.setText("<<Back");
+        btnbackOM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbackOMActionPerformed(evt);
+            }
+        });
+        add(btnbackOM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/hospitals_bg.jpg"))); // NOI18N
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 800));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -219,12 +203,29 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
 
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+if(txtName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+
+if(txtAddress.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Adress cannot be empty");
+            return;
+        }
+
+if(txtUserName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "UserName cannot be empty");
+            return;
+        }
+
+if(txtPassword.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Password cannot be empty");
+            return;
+        }
+        
+// TODO add your handling code here:
         //Add organiztion
         //Prefill type from organization
         Organization.Type type = (Organization.Type) typeCombo.getSelectedItem();
@@ -262,6 +263,7 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
             resetFields();
             JOptionPane.showMessageDialog(null, "Organization is created successfully");
         }
+        logr.info("Create Button Clicked");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -269,8 +271,20 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_typeComboActionPerformed
 
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void btnbackOMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackOMActionPerformed
+        // TODO add your handling code here:
+    userProcessContainer.remove(this);
+    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+    layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnbackOMActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnbackOM;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -278,11 +292,12 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     private javax.swing.JComboBox typeCombo;
     // End of variables declaration//GEN-END:variables
@@ -300,13 +315,13 @@ public class AddOrganizationHospitals extends javax.swing.JPanel {
         
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
         {
-             if(organization instanceof NgoOrganization){
+//             if(organization instanceof NgoOrganization){
                 Object[] row = new Object[3];
                 row[0] = organization.getOrganizationID();
                 row[1] = organization.getName();
                 row[2] = organization.getAddress();
                 model.addRow(row);
-             }
+//             }
         }
             
         }

@@ -22,7 +22,7 @@ public class NgoAdminRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
-        return new NgoLoginPage(userProcessContainer, organization, enterprise, network);
+        return new NgoLoginPage(userProcessContainer, organization, enterprise, network, business);
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

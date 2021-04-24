@@ -50,5 +50,8 @@ public class PatientDirectory {
         return newPatient;
     }
     
+    public void deletePatient(Patinet p){
+        patientList.remove(p);
+    }
     
 }

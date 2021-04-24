@@ -15,6 +15,8 @@ import java.awt.Component;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
+import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,11 +27,13 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private UserAccount userAccount;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     /**
      * Creates new form RequestLabTestJPanel
      */
     public RequestLabTestJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise) {
         initComponents();
+        logr.info("LoggingIn");
         
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -52,6 +56,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,11 +85,20 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 120, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 120, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/DoctorRole/hospitalimage.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setPreferredSize(new java.awt.Dimension(768, 768));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 710));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-        
+
+if(messageJTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "You need to write a message");
+            return;
+        }        
         String message = messageJTextField.getText();
         
         LabTestWorkRequest request = new LabTestWorkRequest();
@@ -103,6 +117,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             org.getWorkQueue().getWorkRequestList().add(request);
             userAccount.getWorkQueue().getWorkRequestList().add(request);
         }
+        logr.info("Request Test Clicked");
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
@@ -115,6 +130,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         dwjp.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        logr.info("Back Button Clicked");
         
     }//GEN-LAST:event_backJButtonActionPerformed
 
@@ -122,6 +138,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;
     private javax.swing.JLabel valueLabel;

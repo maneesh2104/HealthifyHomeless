@@ -9,12 +9,14 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Network.Network;
 import javax.swing.JOptionPane;
+import java.util.logging.*;
 
 /**
  *
  * @author maneesh
  */
 public class UpdateNetworkJFrame extends javax.swing.JFrame {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form UpdateNetworkJFrame
@@ -24,6 +26,7 @@ public class UpdateNetworkJFrame extends javax.swing.JFrame {
     private ManageNetworkJPanel panel;
     public UpdateNetworkJFrame(EcoSystem system, Network network, ManageNetworkJPanel panel) {
         initComponents();
+        logr.info("LoggingIn");
         this.system = system;
         this.selectedNetwork = network;
         this.panel = panel;
@@ -45,68 +48,68 @@ public class UpdateNetworkJFrame extends javax.swing.JFrame {
         nameTextField = new javax.swing.JTextField();
         submitButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 800));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 22)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("NETWORK UPDATE FORM");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 72, 1000, 60));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Network Name:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, -1, 30));
 
+        nameTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(466, 210, 210, 30));
+
+        submitButton.setBackground(new java.awt.Color(51, 204, 255));
+        submitButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        submitButton.setForeground(new java.awt.Color(0, 102, 153));
         submitButton.setText("SAVE");
+        submitButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 330, 40));
 
+        cancelButton.setBackground(new java.awt.Color(51, 204, 255));
+        cancelButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(0, 102, 153));
         cancelButton.setText("CANCEL");
+        cancelButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 330, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cancelButton, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(nameTextField)))
-                .addGap(45, 45, 45))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel2)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(submitButton)
-                    .addComponent(cancelButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel3.setForeground(new java.awt.Color(252, 252, 252));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdminWorkArea/AdminBG2.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1000, 810));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+
+        if(nameTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+
+
         String name = nameTextField.getText();
         if(!name.equals("")){
             if(!system.isDuplicateNetwork(name)){
@@ -121,11 +124,13 @@ public class UpdateNetworkJFrame extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "The Network cannot be null");
         }
+        logr.info("Save Button Clicked");
 
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         this.dispose();
+        logr.info("Cancel Button Clicked");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     /**
@@ -137,6 +142,7 @@ public class UpdateNetworkJFrame extends javax.swing.JFrame {
     private javax.swing.JButton cancelButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField nameTextField;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables

@@ -4,18 +4,22 @@
  * and open the template in the editor.
  */
 package ui.NGOAdminWorkArea;
+import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author maneesh
  */
 public class NewPatientForm extends javax.swing.JPanel {
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     /**
      * Creates new form NewPatientForm
      */
     public NewPatientForm() {
         initComponents();
+        logr.info("LoggingIn");
     }
 
     /**
@@ -29,138 +33,155 @@ public class NewPatientForm extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtage = new javax.swing.JTextField();
+        txtweight = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtheight = new javax.swing.JTextField();
+        txtbloodgroup = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtsymptons = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtdis = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setText("Add Patinet");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("Add Patient");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel2.setText("Name");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        txtname.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnameActionPerformed(evt);
+            }
+        });
+        add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 141, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel3.setText("Age");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        txtage.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtageActionPerformed(evt);
+            }
+        });
+        add(txtage, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 141, -1));
+
+        txtweight.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtweight, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 141, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel4.setText("Weight");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel5.setText("Disease");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButton1.setText("Save Patient");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 130, 40));
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel6.setText("Height");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        txtheight.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtheight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtheightActionPerformed(evt);
+            }
+        });
+        add(txtheight, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 141, -1));
+
+        txtbloodgroup.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtbloodgroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 141, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel7.setText("Blood group");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        txtsymptons.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtsymptons, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 141, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel8.setText("Symptoms");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(168, 168, 168)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(21, 21, 21)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(59, 59, 59))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(47, 47, 47)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2)
-                                .addComponent(jTextField1)
-                                .addComponent(jTextField3)
-                                .addComponent(jTextField4)
-                                .addComponent(jTextField5)
-                                .addComponent(jTextField6)
-                                .addComponent(jTextField7))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jButton1)))
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        txtdis.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        add(txtdis, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 141, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/sick.jpg"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 480));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+if(txtname.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name cannot be empty");
+            return;
+        }
+       if(txtage.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Age cannot be empty");
+            return;
+       }
+       if(txtweight.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Weight cannot be empty");
+            return;
+       }
+       if(txtheight.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Height cannot be empty");
+            return;
+       }
+        if(txtbloodgroup.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Blood Group cannot be empty");
+            return;
+       }
+        if(txtsymptons.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Symptons cannot be empty");
+            return;
+       }
+        if(txtdis.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Disease cannot be empty");
+            return;
+       }
+        
+        logr.info("Save Patient Button Clicked");        // TODO add your handling code here:
         
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtageActionPerformed
+
+    private void txtheightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtheightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtheightActionPerformed
+
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -173,12 +194,13 @@ public class NewPatientForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtage;
+    private javax.swing.JTextField txtbloodgroup;
+    private javax.swing.JTextField txtdis;
+    private javax.swing.JTextField txtheight;
+    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtsymptons;
+    private javax.swing.JTextField txtweight;
     // End of variables declaration//GEN-END:variables
 }

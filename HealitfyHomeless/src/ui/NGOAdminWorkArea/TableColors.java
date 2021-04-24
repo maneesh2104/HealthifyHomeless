@@ -25,7 +25,7 @@ public class TableColors extends DefaultTableCellRenderer {
     @Override
     public Component getTableCellRendererComponent(JTable myTable, Object value, boolean selected, boolean focused, int row, int column) {
         super.getTableCellRendererComponent(myTable, value, selected, focused, row, column);
-        setBackground(new java.awt.Color(215, 81, 81));
+        setBackground(new java.awt.Color(0,102,153));
         setForeground(new java.awt.Color(255, 255, 255));
         myTable.setFillsViewportHeight(true);
         setBorder(BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));

@@ -33,7 +33,7 @@ public class OrganizationDirectory {
             organization = new LabOrganization();
             organizationList.add(organization);
         }
-        else if (type.getValue().equals(Type.NGO.getValue())){
+        else if (type.getValue().equals(Type.NGO.getValue()) || type.getValue().equals(Type.Shelter.getValue()) || type.getValue().equals(Type.HealthCamp.getValue())){
             organization = new NgoOrganization(address);
             organizationList.add(organization);
         }
