@@ -94,7 +94,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 270, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 610, 40));
 
         jButton3.setBackground(new java.awt.Color(51, 204, 255));
         jButton3.setFont(jButton3.getFont().deriveFont(jButton3.getFont().getStyle() | java.awt.Font.BOLD, jButton3.getFont().getSize()+1));
@@ -106,7 +106,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 270, 40));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 270, 40));
 
         jButton4.setBackground(new java.awt.Color(51, 204, 255));
         jButton4.setFont(jButton4.getFont().deriveFont(jButton4.getFont().getStyle() | java.awt.Font.BOLD, jButton4.getFont().getSize()+1));
@@ -119,7 +119,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 270, -1));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, 270, -1));
 
         jButton5.setText("<<Back");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

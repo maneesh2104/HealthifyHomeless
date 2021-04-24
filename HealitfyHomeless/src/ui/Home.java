@@ -69,6 +69,7 @@ public class Home extends javax.swing.JFrame {
         loginJLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -185,11 +186,11 @@ public class Home extends javax.swing.JFrame {
                 btn_exitMousePressed(evt);
             }
         });
-        jPanel4.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, 46));
+        jPanel4.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, 46));
 
         jLabel12.setFont(jLabel12.getFont().deriveFont(jLabel12.getFont().getStyle() | java.awt.Font.BOLD, jLabel12.getFont().getSize()+1));
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 60, 50));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 130, 50));
 
         loginJButton.setBackground(new java.awt.Color(255, 255, 255));
         loginJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -226,7 +227,7 @@ public class Home extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(118, 118, 118)
                                 .addComponent(loginJLabel)))
-                        .addGap(0, 162, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(passwordField))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -252,11 +253,11 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(51, 204, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 153));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Funds Application");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jButton1.setPreferredSize(new java.awt.Dimension(0, 25));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,6 +294,11 @@ public class Home extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new java.awt.CardLayout());
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Home_BG.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel6.add(jLabel4, "card2");
+
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 1000, 800));
 
         pack();
@@ -481,6 +487,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
