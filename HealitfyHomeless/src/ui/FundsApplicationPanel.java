@@ -230,6 +230,7 @@ public class FundsApplicationPanel extends javax.swing.JPanel {
         txtSssn.setText("");
         txtEmail.setText("");
         txtAmmount.setText("");
+        txtName.setText("");
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
