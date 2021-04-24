@@ -52,10 +52,13 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         adddoctor = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         generateBills = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         assigntodoctor = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1000, 453));
@@ -74,11 +77,16 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
                 adddoctorMouseClicked(evt);
             }
         });
+        adddoctor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ADD DOCTOR");
-        adddoctor.add(jLabel2);
+        adddoctor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 7, -1, -1));
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/add_doc_pj.png"))); // NOI18N
+        adddoctor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 114, 180, 60));
 
         add(adddoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 180, 240));
 
@@ -89,11 +97,16 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
                 generateBillsMouseClicked(evt);
             }
         });
+        generateBills.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("GENERATE BILLS");
-        generateBills.add(jLabel3);
+        generateBills.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 7, -1, -1));
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/gen_bills_pj.png"))); // NOI18N
+        generateBills.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 114, 180, 70));
 
         add(generateBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 180, 240));
 
@@ -104,11 +117,16 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
                 assigntodoctorMouseClicked(evt);
             }
         });
+        assigntodoctor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ASSIGN TO DOCTOR");
-        assigntodoctor.add(jLabel5);
+        assigntodoctor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 7, -1, -1));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/assg_to_doc_pj.png"))); // NOI18N
+        assigntodoctor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 70));
 
         add(assigntodoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 180, 240));
 
@@ -116,15 +134,6 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/wel_hosp_admin.jpg"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 800));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        GenerateBillPanel genPanle = new GenerateBillPanel(userProcessContainer, organization);
-        userProcessContainer.add("addOrganization",genPanle);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer); 
-        logr.info("GenerateBill Button Clicked");
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void assigntodoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assigntodoctorMouseClicked
         // TODO add your handling code here:
@@ -137,23 +146,28 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
     private void generateBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generateBillsMouseClicked
         // TODO add your handling code here:
-                GenerateBillPanel genPanle = new GenerateBillPanel(userProcessContainer, organization);
-        userProcessContainer.add("addOrganization",genPanle);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer); 
-        logr.info("GenerateBill Button Clicked");
     }//GEN-LAST:event_generateBillsMouseClicked
 
-    private void adddoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adddoctorMouseClicked
+    private void assigntodoctorMouse1Clicked(java.awt.event.MouseEvent evt) {                                            
         // TODO add your handling code here:
-                AddDoctorPanel addDoctor = new AddDoctorPanel(userProcessContainer,organization);
+        
+    }                                        
+
+        
+
+    private void adddoctorMouseClicked(java.awt.event.MouseEvent evt) {                                       
+        // TODO add your handling code here:
+
+        AddDoctorPanel addDoctor = new AddDoctorPanel(userProcessContainer,organization);
         userProcessContainer.add("addOrganization",addDoctor);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);   
         logr.info("Add Doctor Button Clicked");
-    }//GEN-LAST:event_adddoctorMouseClicked
+    }                                        
+        
 
-                                         
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adddoctor;
     private javax.swing.JPanel assigntodoctor;
@@ -161,7 +175,10 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
