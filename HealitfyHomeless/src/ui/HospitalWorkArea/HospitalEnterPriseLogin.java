@@ -52,6 +52,7 @@ public class HospitalEnterPriseLogin extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -79,6 +80,10 @@ public class HospitalEnterPriseLogin extends javax.swing.JPanel {
         jLabel2.setText("MANAGE ORGANIZATION");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 11, 200, 30));
 
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HospitalWorkArea/manage_org.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 114, 200, 90));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 210, 240));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -100,6 +105,7 @@ public class HospitalEnterPriseLogin extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
