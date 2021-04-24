@@ -37,7 +37,6 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     Network network;
     Enterprise enterprise;
     Organization org;
-    JPanel container;
     public AddOrganizationJpanel(JPanel userProcessContainer,EcoSystem ecosystem, Enterprise enterprise) {
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
@@ -57,7 +56,6 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -75,10 +73,6 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         btnBackOrgManagement = new javax.swing.JButton();
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/NGOAdminWorkArea/hospitalimage.png"))); // NOI18N
-        jLabel8.setText("jLabel7");
-        jLabel8.setPreferredSize(new java.awt.Dimension(768, 768));
-
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1000, 800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,13 +85,13 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "id", "Name", "Address"
+                "id", "Address"
             }
         ));
         jTable1.setRowHeight(30);
@@ -269,9 +263,9 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
 
     private void btnBackOrgManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackOrgManagementActionPerformed
         // TODO add your handling code here:
-        container.remove(this);
-        CardLayout layout = (CardLayout) container.getLayout();
-        layout.previous(container);
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
         
     }//GEN-LAST:event_btnBackOrgManagementActionPerformed
 
@@ -286,7 +280,6 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtAddress;
@@ -309,13 +302,15 @@ public class AddOrganizationJpanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
+        
+        
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
         {
+            
              if(organization instanceof NgoOrganization){
-                Object[] row = new Object[3];
+                Object[] row = new Object[2];
                 row[0] = organization.getOrganizationID();
-                row[1] = organization.getName();
-                row[2] = organization.getAddress();
+                row[1] = organization.getAddress();
                 model.addRow(row);
              }
         }

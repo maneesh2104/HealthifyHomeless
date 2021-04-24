@@ -191,7 +191,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
 
         populateTable();
-              JOptionPane.showMessageDialog(this, "Network added successfully");
+              JOptionPane.showMessageDialog(this, "Enterprise added successfully");
 
         logr.info("Submit Button Clicked");
 

@@ -87,14 +87,14 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         jButton1.setBackground(new java.awt.Color(51, 204, 255));
         jButton1.setFont(jButton1.getFont().deriveFont(jButton1.getFont().getStyle() | java.awt.Font.BOLD, jButton1.getFont().getSize()+1));
         jButton1.setForeground(new java.awt.Color(0, 102, 153));
-        jButton1.setText("Update");
+        jButton1.setText("Add Patient");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 270, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 270, 40));
 
         jButton3.setBackground(new java.awt.Color(51, 204, 255));
         jButton3.setFont(jButton3.getFont().deriveFont(jButton3.getFont().getStyle() | java.awt.Font.BOLD, jButton3.getFont().getSize()+1));
@@ -151,7 +151,10 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        logr.info("Update Button Clicked");
+         AddpatinetJFrame addForm = new AddpatinetJFrame(org);
+         addForm.setLocationRelativeTo(null);
+         addForm.setVisible(true);
+         logr.info("Add Button Clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

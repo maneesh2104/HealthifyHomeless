@@ -154,8 +154,8 @@ public class NgoLoginPage extends javax.swing.JPanel {
 
     private void managepatients1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepatients1MouseClicked
         // TODO add your handling code here:        
-        AssignToHospitalPanel assignHospital=new AssignToHospitalPanel(org, enterprise, container, network);
-        container.add("manageNetworkJPanel",assignHospital);
+        ManagePatientsJPanel manageNetworkJPanel=new ManagePatientsJPanel(org, container);
+        container.add("manageNetworkJPanel",manageNetworkJPanel);
         CardLayout layout=(CardLayout)container.getLayout();
         layout.next(container);
     }//GEN-LAST:event_managepatients1MouseClicked
